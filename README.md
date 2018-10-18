@@ -1,2 +1,3 @@
 # NTU 4717 project
-#Hello testing
+
+WebApp application. Jager Cinema
