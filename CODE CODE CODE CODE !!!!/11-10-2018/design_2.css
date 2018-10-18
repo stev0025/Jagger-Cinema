@@ -150,6 +150,16 @@ img#home_movie_pict{
 	width: 150px;
 }
 
+img#home_ads_wide{
+	width: 100%;
+	max-width: 700px;
+}
+
+img#home_ads{
+	width: 100%;
+	max-width: 350px;
+}
+
 #login_content_section {
     text-align: left;
     color: black;
