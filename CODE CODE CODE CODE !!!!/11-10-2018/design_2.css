@@ -27,8 +27,8 @@ body {
     text-align: left;
 }
 #logo_pict {
-    height: 80px;
-    width: 80px;
+    width: 180%;
+	content:url(logo_main.jpg);
 }
 #login_reg {
     background-color: yellow;
@@ -123,6 +123,12 @@ body {
     margin: 0 auto 0 auto;
     max-width: 1200px;
 }
+
+#content_logo_pict {
+	margin: 0 auto;
+	content:url(logo_main.jpg);
+}
+
 #homepage_content_table_movie {
     margin: 0 auto;
     width: 100%;
@@ -140,6 +146,10 @@ body {
     padding: 6px;
     border-collapse: collapse;
 }
+img#home_movie_pict{
+	width: 150px;
+}
+
 #login_content_section {
     text-align: left;
     color: black;
