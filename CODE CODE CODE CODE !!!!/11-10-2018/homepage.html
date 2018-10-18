@@ -5,6 +5,35 @@
         <title>Jagger Cinema - Home</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="design_2.css">
+        <style>
+        ul {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            display:inline-block;
+            list-style-type: none;
+        }
+        li {
+            margin:0 auto;
+            overflow: hidden;
+            float:left;
+
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+            background-color: #111;
+        }          
+        </style>
     </head>
 
     <body>
@@ -44,48 +73,14 @@
                     </div>
                 </div>
             </div>
-            <div id="navigation">
-				<div id="navigation_section">
-                <table id="nav_table">
-                    <tr>
-<!--                        <td id="nav_box">
-                            <img id="nav_box_pict" src="https://thumb9.shutterstock.com/display_pic_with_logo/2374061/643553332/stock-vector-vector-black-white-contour-simple-sketch-of-wreath-decoration-643553332.jpg">
-                            <p id="nav_box_text">Hola</p>
-                        </td>
-                        <td id="nav_box">
-                            <img id="nav_box_pict" src="https://thumb9.shutterstock.com/display_pic_with_logo/2374061/643553332/stock-vector-vector-black-white-contour-simple-sketch-of-wreath-decoration-643553332.jpg">
-                            <p id="nav_box_text">Hola</p>
-                        </td>
-                        <td id="nav_box">
-                            <img id="nav_box_pict" src="https://thumb9.shutterstock.com/display_pic_with_logo/2374061/643553332/stock-vector-vector-black-white-contour-simple-sketch-of-wreath-decoration-643553332.jpg">
-                            <p id="nav_box_text">Hola</p>
-                        </td>
-                        <td id="nav_box">
-                            <img id="nav_box_pict" src="https://thumb9.shutterstock.com/display_pic_with_logo/2374061/643553332/stock-vector-vector-black-white-contour-simple-sketch-of-wreath-decoration-643553332.jpg">
-                            <p id="nav_box_text">Hola</p>
-                        </td>
--->
-                        <td id="nav_box">
-                            <a href="http://example.com">
-                                    a
-                            </a>
-                        </td>
-                        <td id="nav_box">
-                            <p id="nav_box_text">holder</p>
-                        </td>
-                        <td id="nav_box">
-                            <p id="nav_box_text">holder</p>
-                        </td>      
-                        <td id="nav_box">
-                            <p id="nav_box_text">holder</p>
-                        </td>   
-                        <td id="nav_box">
-                            <p id="nav_box_text">holder</p>
-                        </td>                           
-                    </tr>
-                </table>
-				</div>
-			</div>
+			<div id="navigation_section">
+                    <ul>
+                        <li><a href="http://example.com">Home</a></li>
+                        <li><a href="http://example.com">News</a></li>
+                        <li><a href="http://example.com">Contact</a></li>
+                        <li><a href="http://example.com">About</a></li>
+                    </ul>                    
+            </div>
 
 
 

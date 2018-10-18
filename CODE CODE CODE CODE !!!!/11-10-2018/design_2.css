@@ -104,7 +104,9 @@ body {
 #nav_box {
     background-color: yellow;
     padding: 8px 10px 5px 10px;
+    display:block;
     width: 100px;
+    
 }
 #nav_box_pict {
     margin: 0 30px 3px 30px;
