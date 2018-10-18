@@ -102,10 +102,10 @@ body {
     margin: auto;
 }
 #nav_box {
-    background-color: yellow;
+    background-color: black;
     padding: 8px 10px 5px 10px;
-    display:block;
-    width: 100px;
+    display:inline-block;
+    width: 1000px;
     
 }
 #nav_box_pict {
