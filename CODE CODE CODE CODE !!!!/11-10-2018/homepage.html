@@ -5,37 +5,6 @@
         <title>Home - Jagger Cinema</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="design_2.css">
-        <style>
-        ul {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-            display:inline-block;
-            list-style-type: none;
-        }
-        li {
-            margin:0 auto;
-            overflow: hidden;
-            float:left;
-            border-style: hidden solid hidden solid;
-            border-color: black;
-        }
-
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            width:100px;
-        }
-
-        /* Change the link color to #111 (black) on hover */
-        li a:hover {
-            background-color: #111;
-        }          
-        </style>
     </head>
 
     <body>
@@ -50,7 +19,8 @@
 					</div>
 
 					<div id="login_reg">
-						<p>Login or something</p>
+						<input class="btn_reg" type="button" value="register">
+						<input class="btn_log" type="button" value="login">
 
 					</div>
 				</div>
@@ -74,17 +44,30 @@
                     </div>
                 </div>
             </div>
-			<div id="navigation_section">
-                <div id="nav_box">
-                    <ul>
-                        <li><a href="http://example.com">Home</a></li>
-                        <li><a href="http://example.com">Movie</a></li>
-                        <li><a href="http://example.com">Contact Us</a></li>
-                        <li><a href="http://example.com">About Us</a></li>
-                        <li><a href="http://example.com">Jobs</a></li>
-                    </ul>           
-                </div>         
-            </div>
+			<div id="navigation">
+				<div id="navigation_section">
+					<div id="nav_box">
+						<ul>
+							<li><a href="http://example.com">
+									Movies
+								</a>
+							</li>							
+							<li><a href="http://example.com">
+									About Us
+								</a>
+							</li>
+							<li><a href="http://example.com">
+									Contact Us
+								</a>
+							</li>
+							<li style="border-style:hidden"><a href="http://example.com">						
+									Jobs
+								</a>
+							</li>
+						</ul>           
+					</div>         
+				</div>
+			</div>
 
 
 
