@@ -64,30 +64,34 @@ body {
 
 #slideshow {
     background-color: none;
-    height: auto;
 }
 .slide-section {
-	width: 800px;
-	height: 400px;
+	width: 1200px;
+	height: 600px;
 	background: url(slide1.jpg);
+	background-size: cover;
 	margin: 0px auto;
 	animation-name: slider;
-	animation-duration: 4s;
+	animation-duration: 10s;
 	animation-iteration-count: infinite;
 }
 
 @keyframes slider {
 	0%{
 		background: url(slide1.jpg);
+		background-size: cover;
 	}
 	25%{
 		background: url(slide2.jpg);
+		background-size: cover;
 	}
 	50%{
 		background: url(slide3.jpg);
+		background-size: cover;
 	}
 	75%{
 		background: url(slide4.jpg);
+		background-size: cover;
 	}	
 }
 
@@ -177,11 +181,13 @@ img#home_movie_pict{
 }
 
 img#home_ads_wide{
+	margin: 10px 0px;
 	width: 100%;
 	max-width: 700px;
 }
 
 img#home_ads{
+	margin: 10px 0px;
 	width: 100%;
 	max-width: 350px;
 }
