@@ -52,7 +52,7 @@
 			</div>
 			<div id="content">
 				<div id="content_section">
-				<img id="content_logo_pict">			
+				<img id="logo_pict">			
 				<form>
 					<p>Please feel free to contact us at the following:</p>
 					    <table id="contact_us" border=1>

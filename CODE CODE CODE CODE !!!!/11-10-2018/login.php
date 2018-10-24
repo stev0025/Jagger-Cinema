@@ -1,11 +1,42 @@
+<?php //login page
+$servername = "localhost";
+$username = "f34ee";
+$password = "f34ee";
+$dbname = "f34ee";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if (!$conn){
+		echo "Database in not online";
+		exit;
+}
+
+session_start();
+
+if (isset($_POST['email']) && isset($_POST['password'])) {
+	//user tried to log in
+	$email = $_POST['email'];
+	$password = $_POST['password'];
+}
+
+$sql = "SELECT * from customers where email='$email' and password = '$password'";
+$result = $conn->query($query);
+if ($result-> num_rows > 0 )
+{
+	// if they are in the database register the user id
+	$_SESSION['valid_user'] = $email;
+}
+$conn->close();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
-        <title>Registration - Jagger Cinema</title>
+        <title>Login - Jagger Cinema</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="design_2.css">
-    
+ 
     </head>
 
 	<body>
@@ -54,36 +85,17 @@
 			<div id="content">
 				<div id="login_content_section">
 				<img style="width:100px; margin-left:100px;" id="logo_pict">			
-				<form action="register.php" method="POST">
+				<form>
 					<table id="login_content_table">
 					    <tr><td>
-					<fieldset id="login_content_fieldset"><legend style="background-color: white">Login Info</legend>
+					<fieldset id="login_content_fieldset">
 					<label>E-mail:
 					<input type="text" name="email" size="30"></label> <br><br>
 					<label>Password:
-					<input type="password" name="password"></label>
-					<label>Password confirmation:
-					<input type="password" name="password2"></label>
+					<input type="text" name="password"></label>
 					</fieldset>
-					<br><br>
-					
-					<fieldset id="login_content_fieldset"><legend style="background-color: white">Personal Info</legend>
-					<label>Name:
-					<input type="text" name="name" size="30"></label> <br><br>
-					<label>Salutation:
-					<select name="salutation">
-						<option value="Mr.">Mr.</option>
-						<option value="Mrs.">Mrs.</option>
-						<option value="Ms.">Ms.</option>
-						<option value="Mdm.">Mdm.</option>
-					</select>
-					</label> <br><br>
-					<label>Mobile Number:
-					<input type="text" name="phonenumber"></label>
-					</fieldset>
-					<br>
-					<input type="reset" value="Reset">
-					<input type="submit" value="Submit">
+					<input type="submit" value="Apply Now">
+					<p>click here to <a href="www.google.com">sign up</a></p>
 					
 					</td></tr>
 					</table>
@@ -91,6 +103,7 @@
 				</form>
 				</div>
 			</div>
+			
 			
 			
 			<div id="footer">
