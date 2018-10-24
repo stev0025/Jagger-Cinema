@@ -21,14 +21,14 @@ body {
 }
 #logo {
     float: left;
-    background-color: yellow;
-    width: 200px;
+    background-color: transparent;
+    width: 100px;
     height:100%;
     text-align: left;
 }
 #logo_pict {
-    width: 180%;
-	content:url(logo_main.jpg);
+    width: 100%;
+	content:url(logo_main.png);
 }
 #login_reg {
     background-color: transparent;
@@ -196,7 +196,7 @@ img#home_ads{
     text-align: left;
     color: black;
     margin: 0 auto 0 auto;
-    max-width: 1200px;
+    max-width: 1000px;
     background-color:white;
 }
 #login_content_table {
@@ -243,9 +243,27 @@ img#home_ads{
     text-align:left;
 }
 #checkout_content_td_timing {
+	background-color: #232323;
 }
-#checkout_content_td_timing table {
+#checkout_content_td_timing table select {
+	width: 250px;
+	height: 30px;
+	margin-left: 20px;
+	padding: 5px;
+	border-radius: 3px;
+
 }
+
+.checkout_timing_btn {
+	background-color: #91bbff;
+	border-radius: 12px;
+	color: white;
+	padding: 5px 20px;
+	font-size: 15px;
+	cursor: pointer;
+	margin: 12px 50px 2px 20px;
+}
+
 #checkout_content_td_seating {
 }
 #checkout_content_td_seating table {
@@ -297,16 +315,16 @@ img#home_ads{
 #footer {
     margin: 60px 0 0 0;
     padding: 20px 0 20px 0;
-    background-color: #808080;
+    background-color: #232323;
 }
 #footer_section {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    background-color: yellow;
+    background-color: transparent;
 }
 #footer_content {
-    background-color: #003366;
+    background-color: transparent;
     font-family: Arial, sans-serif;
 }
 #footer_content a:link {
@@ -319,7 +337,7 @@ img#home_ads{
     color:Grey;
 }
 #footer_copyright {
-    background-color: #001a33;
+    background-color: transparent;
     margin: 10px 0px;
 }
 #footer_table th {

@@ -53,23 +53,33 @@
 			
 			<div id="content">
 				<div id="login_content_section">
-				<img id="logo_pict" src="https://cdn.shopifycloud.com/hatchful-web/assets/313d73fa42f04a46213abc6267b4d074.png">			
-				<form>
+				<img style="width:100px; margin-left:100px;" id="logo_pict">			
+				<form action="register.php" method="POST">
 					<table id="login_content_table">
 					    <tr><td>
-					<fieldset id="login_content_fieldset"><legend style="background-color: white">Personal Info</legend>
-					<label>ID:
-					<input type="text" size="30"></label> <br><br>
+					<fieldset id="login_content_fieldset"><legend style="background-color: white">Login Info</legend>
+					<label>E-mail:
+					<input type="text" name="email" size="30"></label> <br><br>
 					<label>Password:
-					<input type="text"></label>
+					<input type="password" name="password"></label>
+					<label>Password confirmation:
+					<input type="password" name="password2"></label>
 					</fieldset>
 					<br><br>
 					
-					<fieldset id="login_content_fieldset"><legend style="background-color: white">Contact Info</legend>
-					<label>Email:
-					<input type="text" size="30"></label> <br><br>
+					<fieldset id="login_content_fieldset"><legend style="background-color: white">Personal Info</legend>
+					<label>Name:
+					<input type="text" name="name" size="30"></label> <br><br>
+					<label>Salutation:
+					<select name="salutation">
+						<option value="Mr.">Mr.</option>
+						<option value="Mrs.">Mrs.</option>
+						<option value="Ms.">Ms.</option>
+						<option value="Mdm.">Mdm.</option>
+					</select>
+					</label> <br><br>
 					<label>Mobile Number:
-					<input type="text"></label>
+					<input type="text" name="phonenumber"></label>
 					</fieldset>
 					<br>
 					<input type="reset" value="Reset">

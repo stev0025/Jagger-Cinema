@@ -53,6 +53,7 @@
 			
 			<div id="content">
 				<div id="content_section">
+					<form>
                     <table id="checkout_content_table">
                         <tr>
                             <td id="checkout_content_td_picture" rowspan="4">
@@ -88,26 +89,41 @@
                                             musician Jackson Maine, who discovers and falls in love with struggling artist Ally (Gaga). She has just about given up 
                                             on her dream to make it big as a singer until Jack coaxes her into the spotlight. But even as Ally's career takes off, 
                                             the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons. 
-                                        </td>
+                                        <hr>
+										</td>
                                     </tr>
+									
                                     
                                 </table>
                             </td>
                         </tr>
                         <tr>
+						
                             <td id="checkout_content_td_timing">
-                                <hr>
+                                
                                 <table>
                                     <tr>
                                         <td>
-                                            Date: <input>
+                                            <br>
+											Date: <Select>
+												<option value = "01/10/18">01/10/18</option>
+												<option value = "01/10/18">01/10/18</option>
+												<option value = "01/10/18">01/10/18</option>
+												<option value = "01/10/18">01/10/18</option>
+												<option value = "01/10/18">01/10/18</option>
+												<option value = "01/10/18">01/10/18</option>
+												<option value = "01/10/18">01/10/18</option>
+											</select>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             Timing:<br>
-                                            <input type="submit"><input type="submit"><input type="submit"><br>
-                                            <input type="submit"><input type="submit">
+                                            <input class="checkout_timing_btn" type="button" value="09.30">
+											<input class="checkout_timing_btn" type="button" value="11.30">
+											<input class="checkout_timing_btn" type="button" value="14.30"><br>
+                                            <input class="checkout_timing_btn" type="button" value="17.30">
+											<input class="checkout_timing_btn" type="button" value="20.30"><br><br>
                                         </td>
                                     </tr>
                                 </table>
@@ -191,14 +207,14 @@
                         				<th>Total Amount</th>
                         			</tr>
                         			<tr>
-                        				<td>A</td>
-                        				<td></td>
-                        				<td></td>
-                        				<td></td>
+                        				<td>A Star is Born</td>
+                        				<td>5$</td>
+                        				<td>2</td>
+                        				<td>20$</td>
                         			</tr>
                         			<tr>
                         			    <td colspan="3">Total</td>
-                        			    <td></td>
+                        			    <td>20$</td>
                         			</tr>
                         		</table>
                         		<br><br>
@@ -215,6 +231,7 @@
                         	</td>
                         </tr>
                     </table>
+					</form>
 				</div>
 			</div>
 			
