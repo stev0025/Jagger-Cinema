@@ -27,15 +27,14 @@ $name = $_POST['name'];
 $salutation = $_POST['salutation'];
 $phonenumber = $_POST['phonenumber'];
 
-echo "TEHEEEE";
 
 if ($password != $password2) {
 	echo "Sorry passwords do not match";
 	exit;
 }
 
-$sql = "INSERT INTO customers (email, password)
-		VALUES ('$email', '$password')";
+$sql = "INSERT INTO customers (name, salutation, email, password, phonenumber)
+		VALUES ('$name', '$salutation', '$email', '$password', '$phonenumber')";
 $result = $conn->query($sql);
 
 if (!$result)

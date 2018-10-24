@@ -12,20 +12,31 @@ if (!$conn){
 
 session_start();
 
+echo 'teheee session start';
+
 if (isset($_POST['email']) && isset($_POST['password'])) {
 	//user tried to log in
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 }
 
+echo "HAHA $email HAHA";
+echo "HAHA $password HAHA";
+
 $sql = "SELECT * from customers where email='$email' and password = '$password'";
+
+//there are problem here until &&
+
 $result = $conn->query($query);
 if ($result-> num_rows > 0 )
 {
 	// if they are in the database register the user id
+	echo 'HEY YOU ARE LOG IN BROTHERRRRR!!!!';
 	$_SESSION['valid_user'] = $email;
 }
 $conn->close();
+
+//problem end!!
 
 ?>
 
@@ -85,22 +96,49 @@ $conn->close();
 			<div id="content">
 				<div id="login_content_section">
 				<img style="width:100px; margin-left:100px;" id="logo_pict">			
-				<form>
-					<table id="login_content_table">
-					    <tr><td>
-					<fieldset id="login_content_fieldset">
-					<label>E-mail:
-					<input type="text" name="email" size="30"></label> <br><br>
-					<label>Password:
-					<input type="text" name="password"></label>
-					</fieldset>
-					<input type="submit" value="Apply Now">
-					<p>click here to <a href="www.google.com">sign up</a></p>
+				
+				
+				<?php
+				
+				
+				if (isset($_SESSION['valid_user']))
+				{	
+					echo 'Welcome ' .$_SESSION['valid_user'].' <br/>';
+					echo '<a href="homepage.php">Home</a><br />';
+				}
+				else
+				{
+					if (isset($email))
+					{
+						// if they failed to log in
+						echo '<p style="text-color:red">Invalid user id or password.</p>';
+					}
 					
-					</td></tr>
-					</table>
+				// the form to log in
+				
+				echo '<form method="post" action="login.php">';
+				echo '	<table id="login_content_table">';
+				echo '	    <tr><td>';
+				echo '		<fieldset id="login_content_fieldset">';
+				echo '		<label>E-mail:';
+				echo ' 		<input type="text" name="email" size="30"></label> <br><br>';
+				echo '		<label>Password:';
+				echo '		<input type="text" name="password"></label>';
+				echo '		</fieldset>';
+				
+				echo '		<input type="submit" value="Apply Now">';
+				echo '		<p>click here to <a href="www.google.com">sign up</a></p>';
 					
-				</form>
+				echo '		</td></tr>';
+				echo '	</table>';
+					
+				echo '</form>';
+				}
+				
+				?>
+				
+				
+				
 				</div>
 			</div>
 			
