@@ -1,0 +1,3 @@
+INSERT INTO customers(id,name,salutation,password,email,phonenumber) VALUES (1,'Apple','Mrs.','Apple','applewoman@gmail.com',91239123);
+INSERT INTO customers(id,name,salutation,password,email,phonenumber) VALUES (2,'Pear','Mr.','Pear','pearman@gmail.com',91119111);
+INSERT INTO customers(id,name,salutation,password,email,phonenumber) VALUES (3,'Banana','Ms.','Banana','bananalady@gmail.com',92229222);

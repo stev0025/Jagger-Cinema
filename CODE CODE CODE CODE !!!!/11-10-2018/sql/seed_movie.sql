@@ -1,0 +1,1 @@
+INSERT INTO movies(id,title,pict,description,detail1,detail2) VALUES (1,'MOVIE','PICTURE_LINK_HERE','DESC','DETAIL_1','DETAIL_2');
