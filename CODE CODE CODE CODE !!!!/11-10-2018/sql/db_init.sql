@@ -17,7 +17,7 @@ DROP TABLE IF EXISTS availability;
 CREATE TABLE movies (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
-  `pict` char(10) NOT NULL,
+  `pict` varchar(20) NOT NULL,
   `description` text NOT NULL,
   `detail1` text NOT NULL,
   `detail2` text NOT NULL,
