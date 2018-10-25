@@ -1,3 +1,41 @@
+<?php
+$servername = "localhost";
+$username = "f34ee";
+$password = "f34ee";
+$dbname = "f34ee";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$query = "SELECT * FROM `movies` WHERE id='1'";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+$movie_title_box1 = $row['title'];
+$movie_picture_box1 = $row['pict'];
+
+$query = "SELECT * FROM `movies` WHERE id='2'";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+$movie_title_box2 = $row['title'];
+$movie_picture_box2 = $row['pict'];
+
+$query = "SELECT * FROM `movies` WHERE id='3'";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+$movie_title_box3 = $row['title'];
+$movie_picture_box3 = $row['pict'];
+
+$query = "SELECT * FROM `movies` WHERE id='4'";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+$movie_title_box4 = $row['title'];
+$movie_picture_box4 = $row['pict'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,38 +99,30 @@
 				    <table id="homepage_content_table_movie" border="1">
 				        <tr>
 				            <td>
-				                <img id="home_movie_pict" src="movies\img6359.jpg">
+				                <img id="home_movie_pict" src="<?php echo $movie_picture_box1;?>">
 
 				            </td>
 				            <td>
-				                <img id="home_movie_pict" src="movies\img6359.jpg">
+				                <img id="home_movie_pict" src="<?php echo $movie_picture_box2;?>">
 
 				            </td>
 				            <td>
-				                <img id="home_movie_pict" src="movies\img6359.jpg">
+				                <img id="home_movie_pict" src="<?php echo $movie_picture_box3;?>">
 
 				            </td>
 				            <td>
-				                <img id="home_movie_pict" src="movies\img6359.jpg">
+				                <img id="home_movie_pict" src="<?php echo $movie_picture_box4;?>">
 
 				            </td>
 				        </tr>
 				        <tr>
-				            <td>Venom *<br>
-                                (PG13: Some Violence & Coarse Language)<br>
-                                112 minutes
+				            <td><?php echo $movie_title_box1;?>
                             </td>
-				            <td>Venom *<br>
-                                (PG13: Some Violence & Coarse Language)<br>
-                                112 minutes
+				            <td><?php echo $movie_title_box2;?>
 							</td>
-				            <td>Venom *<br>
-                                (PG13: Some Violence & Coarse Language)<br>
-                                112 minutes
+				            <td><?php echo $movie_title_box3;?>
 							</td>
-				            <td>Venom *<br>
-                                (PG13: Some Violence & Coarse Language)<br>
-                                112 minutes
+				            <td><?php echo $movie_title_box4;?>
 							</td>
 
 				        </tr>
@@ -115,13 +145,11 @@
 				            </td>
 				        </tr>
 				        <tr>
-				            <td>Venom *<br>
-                                (PG13: Some Violence & Coarse Language)<br>
-                                112 minutes
+				            <td>
                             </td>
-				            <td>Title1</td>
-				            <td>Title1</td>
-				            <td>Title1</td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
 
 				        </tr>
 				        
