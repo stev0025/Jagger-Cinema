@@ -19,8 +19,8 @@ CREATE TABLE movies (
   `title` varchar(50) NOT NULL,
   `pict` char(10) NOT NULL,
   `description` text NOT NULL,
-  `detail1` char(4) NOT NULL,
-  `detail2` int(10) NOT NULL,
+  `detail1` text NOT NULL,
+  `detail2` text NOT NULL,
   PRIMARY KEY (id)
 );
 

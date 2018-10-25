@@ -61,19 +61,19 @@
 				    <table id="homepage_content_table_movie" border="1">
 				        <tr>
 				            <td>
-				                <img id="home_movie_pict" src="https://www.gv.com.sg/media/imagesresize/img6359.jpg">
+				                <img id="home_movie_pict" src="movies\img6359.jpg">
 
 				            </td>
 				            <td>
-				                <img id="home_movie_pict" src="https://www.gv.com.sg/media/imagesresize/img6359.jpg">
+				                <img id="home_movie_pict" src="movies\img6359.jpg">
 
 				            </td>
 				            <td>
-				                <img id="home_movie_pict" src="https://www.gv.com.sg/media/imagesresize/img6359.jpg">
+				                <img id="home_movie_pict" src="movies\img6359.jpg">
 
 				            </td>
 				            <td>
-				                <img id="home_movie_pict" src="https://www.gv.com.sg/media/imagesresize/img6359.jpg">
+				                <img id="home_movie_pict" src="movies\img6359.jpg">
 
 				            </td>
 				        </tr>
@@ -98,19 +98,19 @@
 				        </tr>
 				        <tr>
 				            <td>
-				                <img id="home_movie_pict" src="https://www.gv.com.sg/media/imagesresize/img6359.jpg">
+				                <img id="home_movie_pict">
 
 				            </td>
 				            <td>
-				                <img id="home_movie_pict" src="https://cdn.shopifycloud.com/hatchful-web/assets/313d73fa42f04a46213abc6267b4d074.png">
+				                <img id="home_movie_pict">
 
 				            </td>
 				            <td>
-				                <img id="home_movie_pict" src="https://cdn.shopifycloud.com/hatchful-web/assets/313d73fa42f04a46213abc6267b4d074.png">
+				                <img id="home_movie_pict">
 
 				            </td>
 				            <td>
-				                <img id="home_movie_pict" src="https://cdn.shopifycloud.com/hatchful-web/assets/313d73fa42f04a46213abc6267b4d074.png">
+				                <img id="home_movie_pict">
 
 				            </td>
 				        </tr>
