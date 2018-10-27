@@ -1,3 +1,1 @@
-# NTU 4717 project
-
-WebApp application. Jager Cinema
+# NTU-EEE-4717-WebApplication-Project
