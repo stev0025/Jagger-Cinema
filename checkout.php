@@ -13,14 +13,13 @@
 			<div id="header">
 				<div id="header_section">
 					<div id="logo">
-						<img id="logo_pict">
+						<a href="homepage.php"><img id="logo_pict"></a>
 
 					</div>
 
 					<div id="login_reg">
-						<input class="btn_reg" type="button" value="register">
-						<input class="btn_log" type="button" value="login">
-
+						<a href="registration.php"><input class="btn_reg" type="button" value="register"></a>
+						<a href="login.php"><input class="btn_log" type="button" value="login"></a>
 					</div>
 				</div>
 			</div>
