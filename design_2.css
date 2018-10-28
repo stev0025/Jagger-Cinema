@@ -68,29 +68,32 @@ body {
 .slide-section {
 	width: 1200px;
 	height: 600px;
-	background: url(slide1.jpg);
+	background: url(slideshow/slide1.jpg);
 	background-size: cover;
 	margin: 0px auto;
+	border-radius: 150px;
+	filter: blur(10px);
 	animation-name: slider;
 	animation-duration: 20s;
 	animation-iteration-count: infinite;
 }
 
+
 @keyframes slider {
 	0%{
-		background: url(slide1.jpg);
+		background: url(slideshow/slide1.jpg);
 		background-size: cover;
 	}
 	25%{
-		background: url(slide2.jpg);
+		background: url(slideshow/slide2.jpg);
 		background-size: cover;
 	}
 	50%{
-		background: url(slide3.jpg);
+		background: url(slideshow/slide3.jpg);
 		background-size: cover;
 	}
 	75%{
-		background: url(slide4.jpg);
+		background: url(slideshow/slide4.jpg);
 		background-size: cover;
 	}	
 }
