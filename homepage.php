@@ -65,7 +65,7 @@ $movie_picture_box4 = $row['pict'];
 
             </div>
             <div id="slideshow">
-				<div class="slide-section"></div>
+				<div class="slide-section-border slide-section"></div>
             </div>
 			<div id="navigation">
 				<div id="navigation_section">

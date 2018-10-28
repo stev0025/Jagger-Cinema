@@ -68,11 +68,9 @@ body {
 .slide-section {
 	width: 1200px;
 	height: 600px;
-	background: url(slideshow/slide1.jpg);
+	background-image: url(slideshow/blur_edges1.png)  ;
 	background-size: cover;
 	margin: 0px auto;
-	border-radius: 150px;
-	filter: blur(10px);
 	animation-name: slider;
 	animation-duration: 20s;
 	animation-iteration-count: infinite;
@@ -81,19 +79,19 @@ body {
 
 @keyframes slider {
 	0%{
-		background: url(slideshow/slide1.jpg);
+		background-image: url(slideshow/blur_edges1.png);
 		background-size: cover;
 	}
 	25%{
-		background: url(slideshow/slide2.jpg);
+		background-image: url(slideshow/blur_edges2.png);
 		background-size: cover;
 	}
 	50%{
-		background: url(slideshow/slide3.jpg);
+		background-image: url(slideshow/blur_edges3.png);
 		background-size: cover;
 	}
 	75%{
-		background: url(slideshow/slide4.jpg);
+		background-image: url(slideshow/blur_edges4.png);
 		background-size: cover;
 	}	
 }
