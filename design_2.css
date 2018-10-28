@@ -102,46 +102,31 @@ body {
 #navigation_section {
     max-width: 1200px;
     background-color: transparent;
-    margin:0 auto 5px auto;
+    margin: 0px auto 20px auto;
     height: auto;
-    padding: 0 40px;
-
+    padding: 0px 40px 5px 40px;
 }
 
 #nav_box {
     background-color: transparent;
     padding: 8px 10px 5px 10px;
-	margin: auto;
-    display:inline-block;    
-}
-
-#nav_box ul {
-	margin: 0;
-	padding: 0;
+	margin: 2px auto 5px auto;
+	width: 100%;
+	overflow: auto;
 	text-align: center;
-	overflow: hidden;
-	background-color: transparent;
-	display:inline-block;
-	list-style-type: none;
-}
-#nav_box li {
-	margin:0 auto;
-	overflow: hidden;
-	float:left;
-	border: 1px solid #e8e8e8;
-	border-style: hidden solid hidden hidden;
 }
 
-#nav_box li a {
-	display: block;
+#nav_box a {
+	display: inline-block;
+	float: center;
 	color: black;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	width:100px;
+	width: 20%;
 }
 
-#nav_box li a:hover {
+#nav_box a:hover {
 	background-color: #111;
 	color: #DAA520;
 }

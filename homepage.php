@@ -70,24 +70,24 @@ $movie_picture_box4 = $row['pict'];
 			<div id="navigation">
 				<div id="navigation_section">
 					<div id="nav_box">
-						<ul>
-							<li><a href="http://example.com">
-									Movies
-								</a>
-							</li>							
-							<li><a href="http://example.com">
-									About Us
-								</a>
-							</li>
-							<li><a href="http://example.com">
-									Contact Us
-								</a>
-							</li>
-							<li style="border-style:hidden"><a href="http://example.com">						
-									Jobs
-								</a>
-							</li>
-						</ul>           
+						
+						<a href="movie.php">
+							Movies
+						</a>
+														
+						<a href="about_us.php">
+							About Us
+						</a>
+							
+						<a href="contact_us.php">
+							Contact Us
+						</a>
+						
+						<a href="jobs.php">						
+							Jobs
+						</a>
+							
+						           
 					</div>         
 				</div>
 			</div>

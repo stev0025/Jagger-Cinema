@@ -29,30 +29,30 @@
 			<div id="navigation">
 				<div id="navigation_section">
 					<div id="nav_box">
-						<ul>
-							<li><a href="http://example.com">
-									Movies
-								</a>
-							</li>							
-							<li><a href="http://example.com">
-									About Us
-								</a>
-							</li>
-							<li><a href="http://example.com">
-									Contact Us
-								</a>
-							</li>
-							<li style="border-style:hidden"><a href="http://example.com">						
-									Jobs
-								</a>
-							</li>
-						</ul>           
+						
+						<a href="movie.php">
+							Movies
+						</a>
+														
+						<a href="about_us.php">
+							About Us
+						</a>
+							
+						<a href="contact_us.php">
+							Contact Us
+						</a>
+						
+						<a href="jobs.php">						
+							Jobs
+						</a>
+							
+						           
 					</div>         
 				</div>
 			</div>
 			<div id="content">
 				<div id="content_section">
-				<img id="logo_pict">			
+				<img id="content_logo_pict">			
 				<form>
 					<p>Please feel free to contact us at the following:</p>
 					    <table id="contact_us" border=1>
