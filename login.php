@@ -95,7 +95,7 @@ $conn->close();
 			
 			<div id="content">
 				<div id="login_content_section">
-				<img style="width:100px; margin-left:100px;" id="logo_pict">			
+				<img id="content_logo_pict">			
 				
 				
 				<?php
