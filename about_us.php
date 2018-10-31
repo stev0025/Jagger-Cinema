@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,9 +24,20 @@
 					</div>
 
 					<div id="login_reg">
-						<a href="registration.php"><input class="btn_reg" type="button" value="register"></a>
-						<a href="login.php"><input class="btn_log" type="button" value="login"></a>
-
+					
+						<?php
+						if (isset($_SESSION['valid_user']))
+						{
+						echo '<h3>Hi, ' .$_SESSION['valid_user'].' </h3>';
+						echo '<a href="logout.php">Logout</a>';
+						}
+						
+						else {
+						echo "<a href='registration.php'><input class='btn_reg' type='button' value='register'></a>";
+						echo "<a href='login.php'><input class='btn_log' type='button' value='login'></a>";
+						}
+						
+						?>
 					</div>
 				</div>
 			</div>
