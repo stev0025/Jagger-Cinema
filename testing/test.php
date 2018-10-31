@@ -1,45 +1,8 @@
-<?php //login page
-$servername = "localhost";
-$username = "f34ee";
-$password = "f34ee";
-$dbname = "f34ee";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if (!$conn){
-		echo "Database in not online";
-		exit;
-}
-
-session_start();
-
-if (isset($_POST['email']) && isset($_POST['password'])) {
-	//user tried to log in
-	$email = $_POST['email'];
-	$password = $_POST['password'];
-}
-
-$query = "SELECT * from customers where email='$email' and password = '$password'";
-
-//there are problem here until &&
-
-$result = $conn->query($query);
-if ($result-> num_rows > 0 )
-{
-	// if they are in the database register the user id
-	echo 'HEY YOU ARE LOG IN BROTHERRRRR!!!!';
-	$_SESSION['valid_user'] = $email;
-}
-$conn->close();
-
-//problem end!!
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
-        <title>Login - Jagger Cinema</title>
+        <title>About Us - Jagger Cinema</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="design_2.css">
  
@@ -55,8 +18,7 @@ $conn->close();
 					</div>
 
 					<div id="login_reg">
-						<a href="registration.php"><input class="btn_reg" type="button" value="register"></a>
-						<a href="login.php"><input class="btn_log" type="button" value="login"></a>
+						<h3>Hi, user</h3>
 
 					</div>
 				</div>
@@ -86,59 +48,26 @@ $conn->close();
 					</div>         
 				</div>
 			</div>
-			
-			
+
 			<div id="content">
-				<div id="login_content_section">
+				<div id="content_section">
 				<img id="content_logo_pict">			
-				
-				
-				<?php
-				
-				
-				if (isset($_SESSION['valid_user']))
-				{	
-					echo 'Welcome ' .$_SESSION['valid_user'].' <br/>';
-					echo '<a href="logout.php">Logout</a><br />';
-				}
-				else
-				{
-					if (isset($email))
-					{
-						// if they failed to log in
-						echo '<p style="text-color:red">Invalid user id or password.</p>';
-					}
-					
-				// the form to log in
-				
-				echo '<form method="post" action="login.php">';
-				echo '	<table id="login_content_table">';
-				echo '	    <tr><td>';
-				echo '		<fieldset id="login_content_fieldset">';
-				echo '		<label>E-mail:';
-				echo ' 		<input type="text" name="email" size="30"></label> <br><br>';
-				echo '		<label>Password:';
-				echo '		<input type="text" name="password"></label>';
-				echo '		</fieldset>';
-	
-				echo '		<input type="submit" value="Apply Now">';
-				echo '		<p>click here to <a href="www.google.com">sign up</a></p>';
-					
-				echo '		</td></tr>';
-				echo '	</table>';
-					
-				echo '</form>';
-				}
-				
-				?>
-				
-				
-				
+				<form>
+				    <fieldset>
+				        <h1 style="font-family:arial; font-size:130%;">About Jagger Cinemas</h1>
+    					<p style="font-family:arial;">Jagger Cinema is an emerging cinema franchise alongside big-name players
+                            within Singapore such as Golden Village and Shaw theatres.<br>The newest, hottest
+                            movies are screened here and we ensure that any esteemed customers will find an
+                            unequaled experience in movie-watching here.<br>We utilize 4K-resolution top-of-the-
+                            end screen projectors with Dolby surround sound 7.1 for every theatre to maximize
+                            our customer’s enjoyment factor.<br>Established in 2018, Jagger Cinema aims to
+                            provide the widest choice of movies and maximum level of comfort for any enthusiastic visitor.
+                        </p>
+					</fieldset>
+		
+				</form>
 				</div>
 			</div>
-			
-			
-			
 			<div id="footer">
                 <div id="footer_section">
                     <div id="footer_content">
@@ -177,9 +106,9 @@ $conn->close();
                 <div id="footer_copyright">
                     <p style="font-size:90%;">©2018 Jagger Cinema Pte Ltd. All rights reserved. No part of this website may be reproduced in any form without our written permission.</p>
                 </div>        
-                </div>
-            </div>        
+					</div>
+				</div>        
         </div>
-    </div>
-  </body>
+	</div>
+	</body>
 </html>
