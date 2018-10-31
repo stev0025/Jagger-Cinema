@@ -153,11 +153,11 @@
                                     <tr>
                                         <td>
                                             Timing:<br>
-                                            <input class="checkout_timing_btn" type="button" value="09.30">
-											<input class="checkout_timing_btn" type="button" value="11.30">
-											<input class="checkout_timing_btn" type="button" value="14.30"><br>
-                                            <input class="checkout_timing_btn" type="button" value="17.30">
-											<input class="checkout_timing_btn" type="button" value="20.30"><br><br>
+                                            <input class="checkout_timing_btn" type="submit" value="09.30">
+											<input class="checkout_timing_btn" type="submit" value="11.30">
+											<input class="checkout_timing_btn" type="submit" value="14.30"><br>
+                                            <input class="checkout_timing_btn" type="submit" value="17.30">
+											<input class="checkout_timing_btn" type="submit" value="20.30"><br><br>
                                         </td>
                                     </tr>
                                 </table>
