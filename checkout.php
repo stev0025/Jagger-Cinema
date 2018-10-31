@@ -239,7 +239,7 @@ $movie_description_box1 = $row['description'];
                         				<th>Total Amount</th>
                         			</tr>
                         			<tr>
-                        				<td>A Star is Born</td>
+                        				<td><?php echo $movie?></td>
                         				<td>5$</td>
                         				<td>2</td>
                         				<td>20$</td>

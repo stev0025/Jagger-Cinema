@@ -175,7 +175,8 @@ $movie_description_box8 = $row['description'];
 							</tr>
 							<tr>
 								<td>
-									<img id="home_movie_pict" src="<?php echo $movie_picture_box2;?>">
+									<img id="home_movie_pict" src="<?php echo $movie_picture_box2;?>"> 
+									<input type = "submit" name="selectedMovie" value="First Man">
 								</td>
 								
 								<td id="movie_description">
@@ -200,6 +201,7 @@ $movie_description_box8 = $row['description'];
 							<tr>
 								<td>
 									<img id="home_movie_pict" src="<?php echo $movie_picture_box3;?>">
+									<input type = "submit" name="selectedMovie" value="Halloween">
 								</td>
 								
 								<td id="movie_description">
@@ -224,10 +226,11 @@ $movie_description_box8 = $row['description'];
 							<tr>
 								<td>
 									<img id="home_movie_pict" src="<?php echo $movie_picture_box4;?>">
+									<input type = "submit" name="selectedMovie" value="Zombiepura">
 								</td>
 								
 								<td id="movie_description">
-									<h3><?php echo $movie_title_box1;?></h3>
+									<h3><?php echo $movie_title_box4;?></h3>
 									<br><br><br>
 									<h3>Details</h3>
 									<table style="width:100%;">
@@ -248,6 +251,7 @@ $movie_description_box8 = $row['description'];
 							<tr>
 								<td>
 									<img id="home_movie_pict" src="<?php echo $movie_picture_box5;?>">
+									<input type = "submit" name="selectedMovie" value="Robin Hood: Origins">	
 								</td>
 								
 								<td id="movie_description">
@@ -272,10 +276,11 @@ $movie_description_box8 = $row['description'];
 							<tr>
 								<td>
 									<img id="home_movie_pict" src="<?php echo $movie_picture_box6;?>">
+									<input type = "submit" name="selectedMovie" value="Goosebumps 2: Haunted Halloween">
 								</td>
 								
 								<td id="movie_description">
-									<h3><?php echo $movie_title_box1;?></h3>
+									<h3><?php echo $movie_title_box6;?></h3>
 									<br><br><br>
 									<h3>Details</h3>
 									<table style="width:100%;">
@@ -296,6 +301,7 @@ $movie_description_box8 = $row['description'];
 							<tr>
 								<td>
 									<img id="home_movie_pict" src="<?php echo $movie_picture_box7;?>">
+									<input type = "submit" name="selectedMovie" value="Disney's Ralph Breaks The Internet: Wreck-It-Ralph">
 								</td>
 								
 								<td id="movie_description">
@@ -320,6 +326,7 @@ $movie_description_box8 = $row['description'];
 							<tr>
 								<td>
 									<img id="home_movie_pict" src="<?php echo $movie_picture_box8;?>">
+									<input type = "submit" name="selectedMovie" value="Widows">
 								</td>
 								
 								<td id="movie_description">
