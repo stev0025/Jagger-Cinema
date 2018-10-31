@@ -1,3 +1,7 @@
+<?php
+ echo "yihaaaa";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +9,38 @@
         <title>Checkout - Jagger Cinema</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="design_2.css">
- 
+		<style>	
+			.empty {
+				background-color: #0000cd;
+				-webkit-appearance: none;
+				cursor: pointer;
+				height: 25px;
+				width: 25px;
+				border-radius: 5px;
+			}
+			
+			.empty:hover {
+				background-color: #4169e1;
+			}
+
+			.empty:checked {
+				background-color: #8470ff;
+			}
+			
+			.booked {
+				background-color: #800080;
+				-webkit-appearance: none;
+				cursor: pointer;
+				height: 25px;
+				width: 25px;
+				border-radius: 5px;
+			}
+			
+			.booked:hover {
+				cursor: context-menu;
+			}
+
+		</style>
     </head>
 
 	<body>
@@ -118,11 +153,11 @@
                                     <tr>
                                         <td>
                                             Timing:<br>
-                                            <input class="checkout_timing_btn" type="button" value="09.30">
-											<input class="checkout_timing_btn" type="button" value="11.30">
-											<input class="checkout_timing_btn" type="button" value="14.30"><br>
-                                            <input class="checkout_timing_btn" type="button" value="17.30">
-											<input class="checkout_timing_btn" type="button" value="20.30"><br><br>
+                                            <input class="checkout_timing_btn" type="submit" value="09.30">
+											<input class="checkout_timing_btn" type="submit" value="11.30">
+											<input class="checkout_timing_btn" type="submit" value="14.30"><br>
+                                            <input class="checkout_timing_btn" type="submit" value="17.30">
+											<input class="checkout_timing_btn" type="submit" value="20.30"><br><br>
                                         </td>
                                     </tr>
                                 </table>
@@ -132,65 +167,53 @@
                             <td id="checkout_content_td_seating">
                                 <table>
                                     <tr>
-                                        <td>
-                                            <hr>
-                                            Screen
-                                        </td>
-                                    </tr>
+										<span>A</span>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<span>A</span><br>
+									</tr>
                                     <tr>
-                                        <td>
-                                            <table>
-                                                <tr>
-                                                    <td class="checkout_content_seating_alphabet">A</td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_gap"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_gap"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_alphabet">A</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="checkout_content_seating_alphabet">B</td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_gap"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_gap"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_alphabet">B</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="checkout_content_seating_alphabet">C</td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_gap"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_gap"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_alphabet">C</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="checkout_content_seating_alphabet">D</td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_gap"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_gap"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_box"></td>
-                                                    <td class="checkout_content_seating_alphabet">D</td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
+										<span>B</span>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<span>B</span><br>
+									</tr>
+                                    <tr>
+										<span>C</span>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<span>C</span><br>
+									</tr>
+                                    <tr>
+										<span>D</span>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<span>D</span><br>
+									</tr>
                                 </table>
                             </td>
                         </tr>
