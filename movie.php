@@ -83,6 +83,9 @@ $movie_detail1_box8 = $row['detail1'];
 $movie_detail2_box8 = $row['detail2'];
 $movie_description_box8 = $row['description'];
 
+#$selectMovie = $_POST['selectedMovie'];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -143,201 +146,204 @@ $movie_description_box8 = $row['description'];
 
             <div id="content">
 				<div id="content_section">
-				    <table id="hmoviepagetable_movie" border="1">
-						<tr>
-				            <td>
-				                <img id="home_movie_pict" src="<?php echo $movie_picture_box1;?>">
-				            </td>
-				            
-				            <td id="movie_description">
-				                <h3><?php echo $movie_title_box1;?></h3>
-								<br><br><br>
-								<h3>Details</h3>
-								<table style="width:100%;">
-									<tr>
-										<td>
-											<p><?php echo $movie_detail1_box1;?></p>
-										</td>
-										<td>
-											<p><?php echo $movie_detail2_box1;?></p>
-										</td>
-									</tr>
-								</table>
-								<br><br>
-								<h3>Synopsis</h3>
-								<p><?php echo $movie_description_box1;?></p>
-				            </td>
-				        </tr>
-						<tr>
-				            <td>
-				                <img id="home_movie_pict" src="<?php echo $movie_picture_box2;?>">
-				            </td>
-				            
-				            <td id="movie_description">
-				                <h3><?php echo $movie_title_box2;?></h3>
-								<br><br><br>
-								<h3>Details</h3>
-								<table style="width:100%;">
-									<tr>
-										<td>
-											<p><?php echo $movie_detail1_box2;?></p>
-										</td>
-										<td>
-											<p><?php echo $movie_detail2_box2;?></p>
-										</td>
-									</tr>
-								</table>
-								<br><br>
-								<h3>Synopsis</h3>
-								<p><?php echo $movie_description_box2;?></p>
-				            </td>
-				        </tr>
-						<tr>
-				            <td>
-				                <img id="home_movie_pict" src="<?php echo $movie_picture_box3;?>">
-				            </td>
-				            
-				            <td id="movie_description">
-				                <h3><?php echo $movie_title_box3;?></h3>
-								<br><br><br>
-								<h3>Details</h3>
-								<table style="width:100%;">
-									<tr>
-										<td>
-											<p><?php echo $movie_detail1_box3;?></p>
-										</td>
-										<td>
-											<p><?php echo $movie_detail2_box3;?></p>
-										</td>
-									</tr>
-								</table>
-								<br><br>
-								<h3>Synopsis</h3>
-								<p><?php echo $movie_description_box3;?></p>
-				            </td>
-				        </tr>
-						<tr>
-				            <td>
-				                <img id="home_movie_pict" src="<?php echo $movie_picture_box4;?>">
-				            </td>
-				            
-				            <td id="movie_description">
-				                <h3><?php echo $movie_title_box1;?></h3>
-								<br><br><br>
-								<h3>Details</h3>
-								<table style="width:100%;">
-									<tr>
-										<td>
-											<p><?php echo $movie_detail1_box4;?></p>
-										</td>
-										<td>
-											<p><?php echo $movie_detail2_box4;?></p>
-										</td>
-									</tr>
-								</table>
-								<br><br>
-								<h3>Synopsis</h3>
-								<p><?php echo $movie_description_box4;?></p>
-				            </td>
-				        </tr>
-						<tr>
-				            <td>
-				                <img id="home_movie_pict" src="<?php echo $movie_picture_box5;?>">
-				            </td>
-				            
-				            <td id="movie_description">
-				                <h3><?php echo $movie_title_box5;?></h3>
-								<br><br><br>
-								<h3>Details</h3>
-								<table style="width:100%;">
-									<tr>
-										<td>
-											<p><?php echo $movie_detail1_box5;?></p>
-										</td>
-										<td>
-											<p><?php echo $movie_detail2_box5;?></p>
-										</td>
-									</tr>
-								</table>
-								<br><br>
-								<h3>Synopsis</h3>
-								<p><?php echo $movie_description_box5;?></p>
-				            </td>
-				        </tr>
-						<tr>
-				            <td>
-				                <img id="home_movie_pict" src="<?php echo $movie_picture_box6;?>">
-				            </td>
-				            
-				            <td id="movie_description">
-				                <h3><?php echo $movie_title_box1;?></h3>
-								<br><br><br>
-								<h3>Details</h3>
-								<table style="width:100%;">
-									<tr>
-										<td>
-											<p><?php echo $movie_detail1_box6;?></p>
-										</td>
-										<td>
-											<p><?php echo $movie_detail2_box6;?></p>
-										</td>
-									</tr>
-								</table>
-								<br><br>
-								<h3>Synopsis</h3>
-								<p><?php echo $movie_description_box6;?></p>
-				            </td>
-				        </tr>
-						<tr>
-				            <td>
-				                <img id="home_movie_pict" src="<?php echo $movie_picture_box7;?>">
-				            </td>
-				            
-				            <td id="movie_description">
-				                <h3><?php echo $movie_title_box7;?></h3>
-								<br><br><br>
-								<h3>Details</h3>
-								<table style="width:100%;">
-									<tr>
-										<td>
-											<p><?php echo $movie_detail1_box7;?></p>
-										</td>
-										<td>
-											<p><?php echo $movie_detail2_box7;?></p>
-										</td>
-									</tr>
-								</table>
-								<br><br>
-								<h3>Synopsis</h3>
-								<p><?php echo $movie_description_box7;?></p>
-				            </td>
-				        </tr>
-						<tr>
-				            <td>
-				                <img id="home_movie_pict" src="<?php echo $movie_picture_box8;?>">
-				            </td>
-				            
-				            <td id="movie_description">
-				                <h3><?php echo $movie_title_box8;?></h3>
-								<br><br><br>
-								<h3>Details</h3>
-								<table style="width:100%;">
-									<tr>
-										<td>
-											<p><?php echo $movie_detail1_box8;?></p>
-										</td>
-										<td>
-											<p><?php echo $movie_detail2_box8;?></p>
-										</td>
-									</tr>
-								</table>
-								<br><br>
-								<h3>Synopsis</h3>
-								<p><?php echo $movie_description_box8;?></p>
-				            </td>
-				        </tr>
-						
-				    </table>
+					<form method = "post" action = "checkout.php">
+						<table id="hmoviepagetable_movie" border="1">
+							<tr>
+								<td>
+									<img id="home_movie_pict" src="<?php echo $movie_picture_box1;?>">
+									<input type = "submit" name="selectedMovie" value="Venom">
+								</td>
+								
+								<td id="movie_description">
+									<h3><?php echo $movie_title_box1;?></h3>
+									<br><br><br>
+									<h3>Details</h3>
+									<table style="width:100%;">
+										<tr>
+											<td>
+												<p><?php echo $movie_detail1_box1;?></p>
+											</td>
+											<td>
+												<p><?php echo $movie_detail2_box1;?></p>
+											</td>
+										</tr>
+									</table>
+									<br><br>
+									<h3>Synopsis</h3>
+									<p><?php echo $movie_description_box1;?></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img id="home_movie_pict" src="<?php echo $movie_picture_box2;?>">
+								</td>
+								
+								<td id="movie_description">
+									<h3><?php echo $movie_title_box2;?></h3>
+									<br><br><br>
+									<h3>Details</h3>
+									<table style="width:100%;">
+										<tr>
+											<td>
+												<p><?php echo $movie_detail1_box2;?></p>
+											</td>
+											<td>
+												<p><?php echo $movie_detail2_box2;?></p>
+											</td>
+										</tr>
+									</table>
+									<br><br>
+									<h3>Synopsis</h3>
+									<p><?php echo $movie_description_box2;?></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img id="home_movie_pict" src="<?php echo $movie_picture_box3;?>">
+								</td>
+								
+								<td id="movie_description">
+									<h3><?php echo $movie_title_box3;?></h3>
+									<br><br><br>
+									<h3>Details</h3>
+									<table style="width:100%;">
+										<tr>
+											<td>
+												<p><?php echo $movie_detail1_box3;?></p>
+											</td>
+											<td>
+												<p><?php echo $movie_detail2_box3;?></p>
+											</td>
+										</tr>
+									</table>
+									<br><br>
+									<h3>Synopsis</h3>
+									<p><?php echo $movie_description_box3;?></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img id="home_movie_pict" src="<?php echo $movie_picture_box4;?>">
+								</td>
+								
+								<td id="movie_description">
+									<h3><?php echo $movie_title_box1;?></h3>
+									<br><br><br>
+									<h3>Details</h3>
+									<table style="width:100%;">
+										<tr>
+											<td>
+												<p><?php echo $movie_detail1_box4;?></p>
+											</td>
+											<td>
+												<p><?php echo $movie_detail2_box4;?></p>
+											</td>
+										</tr>
+									</table>
+									<br><br>
+									<h3>Synopsis</h3>
+									<p><?php echo $movie_description_box4;?></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img id="home_movie_pict" src="<?php echo $movie_picture_box5;?>">
+								</td>
+								
+								<td id="movie_description">
+									<h3><?php echo $movie_title_box5;?></h3>
+									<br><br><br>
+									<h3>Details</h3>
+									<table style="width:100%;">
+										<tr>
+											<td>
+												<p><?php echo $movie_detail1_box5;?></p>
+											</td>
+											<td>
+												<p><?php echo $movie_detail2_box5;?></p>
+											</td>
+										</tr>
+									</table>
+									<br><br>
+									<h3>Synopsis</h3>
+									<p><?php echo $movie_description_box5;?></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img id="home_movie_pict" src="<?php echo $movie_picture_box6;?>">
+								</td>
+								
+								<td id="movie_description">
+									<h3><?php echo $movie_title_box1;?></h3>
+									<br><br><br>
+									<h3>Details</h3>
+									<table style="width:100%;">
+										<tr>
+											<td>
+												<p><?php echo $movie_detail1_box6;?></p>
+											</td>
+											<td>
+												<p><?php echo $movie_detail2_box6;?></p>
+											</td>
+										</tr>
+									</table>
+									<br><br>
+									<h3>Synopsis</h3>
+									<p><?php echo $movie_description_box6;?></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img id="home_movie_pict" src="<?php echo $movie_picture_box7;?>">
+								</td>
+								
+								<td id="movie_description">
+									<h3><?php echo $movie_title_box7;?></h3>
+									<br><br><br>
+									<h3>Details</h3>
+									<table style="width:100%;">
+										<tr>
+											<td>
+												<p><?php echo $movie_detail1_box7;?></p>
+											</td>
+											<td>
+												<p><?php echo $movie_detail2_box7;?></p>
+											</td>
+										</tr>
+									</table>
+									<br><br>
+									<h3>Synopsis</h3>
+									<p><?php echo $movie_description_box7;?></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img id="home_movie_pict" src="<?php echo $movie_picture_box8;?>">
+								</td>
+								
+								<td id="movie_description">
+									<h3><?php echo $movie_title_box8;?></h3>
+									<br><br><br>
+									<h3>Details</h3>
+									<table style="width:100%;">
+										<tr>
+											<td>
+												<p><?php echo $movie_detail1_box8;?></p>
+											</td>
+											<td>
+												<p><?php echo $movie_detail2_box8;?></p>
+											</td>
+										</tr>
+									</table>
+									<br><br>
+									<h3>Synopsis</h3>
+									<p><?php echo $movie_description_box8;?></p>
+								</td>
+							</tr>
+							
+						</table>
+					</form>
  
 				</div>
             </div>

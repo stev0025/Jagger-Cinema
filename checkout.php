@@ -1,5 +1,28 @@
-<?php
- echo "yihaaaa";
+<?php	
+$servername = "localhost";
+$username = "f34ee";
+$password = "f34ee";
+$dbname = "f34ee";	
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$movie = $_POST['selectedMovie'];
+
+$query = "SELECT * FROM `movies` WHERE title='$movie'";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+$movie_title_box1 = $row['title'];
+$movie_picture_box1 = $row['pict'];
+$movie_detail1_box1 = $row['detail1'];
+$movie_detail2_box1 = $row['detail2'];
+$movie_description_box1 = $row['description'];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -91,38 +114,24 @@
                     <table id="checkout_content_table">
                         <tr>
                             <td id="checkout_content_td_picture" rowspan="4">
-                                <img src="https://www.gv.com.sg/media/imagesresize/img6360.jpg">
+                                <img src="<?php echo $movie_picture_box1;?>">
                             </td>
                             <td id="checkout_content_td_description">
                                 <table>
                                     <tr>
                                         <td>
-                                            Details<br>
-                                            Cast:  Bradley Cooper, Lady Gaga<br>
-                                            
-                                            Director:  Bradley Cooper<br>
-                                            
-                                            Genre:  Romance/ Drama<br>
+                                            Details: <br>
+											Title: <?php echo $movie;?><br>
+                                            <?php echo $movie_detail1_box1;?>
                                         </td>
                                         <td>
-                                            Release:  04-10-2018<br>
-                                            
-                                            Running Time:  136 minutes<br>
-                                            
-                                            Distributor:  WB<br>
-                                            
-                                            Language:  English(Sub: Chinese)<br>
+											<?php echo $movie_detail2_box1;?>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">
-                                            <p>Synopsis</p>
-                                            A Star is Born stars four-time Oscar nominee Bradley Cooper (American Sniper, American Hustle, Silver Linings Playbook) 
-                                            and multiple award-winning, Oscar-nominated music superstar Lady Gaga, in her first leading role in a major motion picture. 
-                                            Cooper helms the drama, marking his directorial debut. In this new take on the tragic love story, he plays seasoned 
-                                            musician Jackson Maine, who discovers and falls in love with struggling artist Ally (Gaga). She has just about given up 
-                                            on her dream to make it big as a singer until Jack coaxes her into the spotlight. But even as Ally's career takes off, 
-                                            the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons. 
+                                            <p>Synopsis:</p>
+											<?php echo $movie_description_box1;?>
                                         <hr>
 										</td>
                                     </tr>
@@ -132,36 +141,37 @@
                             </td>
                         </tr>
                         <tr>
-						
-                            <td id="checkout_content_td_timing">
-                                
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <br>
-											Date: <Select>
-												<option value = "01/10/18">01/10/18</option>
-												<option value = "01/10/18">01/10/18</option>
-												<option value = "01/10/18">01/10/18</option>
-												<option value = "01/10/18">01/10/18</option>
-												<option value = "01/10/18">01/10/18</option>
-												<option value = "01/10/18">01/10/18</option>
-												<option value = "01/10/18">01/10/18</option>
-											</select>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Timing:<br>
-                                            <input class="checkout_timing_btn" type="submit" value="09.30">
-											<input class="checkout_timing_btn" type="submit" value="11.30">
-											<input class="checkout_timing_btn" type="submit" value="14.30"><br>
-                                            <input class="checkout_timing_btn" type="submit" value="17.30">
-											<input class="checkout_timing_btn" type="submit" value="20.30"><br><br>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
+							<form action= "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+								<td id="checkout_content_td_timing">
+									
+									<table>
+										<tr>
+											<td>
+												<br>
+												Date: <Select>
+													<option name = "dateBox" value = "01/10/18">01/10/18</option>
+													<option name = "dateBox" value = "01/10/18">01/10/18</option>
+													<option name = "dateBox" value = "01/10/18">01/10/18</option>
+													<option name = "dateBox" value = "01/10/18">01/10/18</option>
+													<option name = "dateBox" value = "01/10/18">01/10/18</option>
+													<option name = "dateBox" value = "01/10/18">01/10/18</option>
+													<option name = "dateBox" value = "01/10/18">01/10/18</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Timing:<br>
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="09.30">
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="11.30">
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="14.30"><br>
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="17.30">
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="20.30"><br><br>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</form>
                         </tr>
                         <tr>
                             <td id="checkout_content_td_seating">
