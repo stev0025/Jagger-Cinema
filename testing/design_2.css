@@ -1,0 +1,345 @@
+body {
+    background-color: black;
+    margin: 8px 0 8px 0;
+    color: white;
+    text-align: center;
+}
+
+#wrapper {
+    background-color: transparent;
+    margin: auto;
+}
+#header {
+    background-color: black;
+    text-align: center;
+}
+#header_section {
+    max-width: 1200px;
+    height: 150px;
+    margin: 0 auto 0 auto;
+    padding: 15px 0 15px 0;
+}
+#logo {
+    float: left;
+    background-color: transparent;
+    width: 120px;
+    height:100%;
+    text-align: left;
+}
+#logo_pict {
+    width: 100%;
+	content:url(logo_main.png);
+}
+#login_reg {
+    background-color: transparent;
+    float: right;
+    width: 225px;
+	padding-top: 25px;
+	bottom: 0px;
+    height:100%;
+    text-align: right;
+}
+	
+.btn_log {
+	width: 45%;
+	float: right;
+	background: #94bb5d;
+	border-radius: 12px;
+	color: white;
+	padding: 5px;
+	font-size: 18px;
+	cursor: pointer;
+	margin: 12px 7px 2px 7px;
+}
+.btn_reg {
+	width: 45%;
+	float: right;
+	background: #ec2001;
+	border-radius: 12px;
+	color: white;
+	padding: 5px;
+	font-size: 18px;
+	cursor: pointer;
+	margin: 12px 2px 2px 2px;
+}
+
+#slideshow {
+    background-color: none;
+}
+.slide-section {
+	width: 1200px;
+	height: 600px;
+	background-image: url(slideshow/blur_edges1.png)  ;
+	background-size: cover;
+	margin: 0px auto;
+	animation-name: slider;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+}
+
+
+@keyframes slider {
+	0%{
+		background-image: url(slideshow/blur_edges1.png);
+		background-size: cover;
+	}
+	25%{
+		background-image: url(slideshow/blur_edges2.png);
+		background-size: cover;
+	}
+	50%{
+		background-image: url(slideshow/blur_edges3.png);
+		background-size: cover;
+	}
+	75%{
+		background-image: url(slideshow/blur_edges4.png);
+		background-size: cover;
+	}	
+}
+
+
+#navigation {
+    background-color: white;
+}
+#navigation_section {
+    max-width: 1200px;
+    background-color: transparent;
+    margin: 0px auto 20px auto;
+    height: auto;
+    padding: 0px 40px 5px 40px;
+}
+
+#nav_box {
+    background-color: transparent;
+    padding: 8px 10px 5px 10px;
+	margin: 2px auto 5px auto;
+	width: 100%;
+	overflow: auto;
+	text-align: center;
+}
+
+#nav_box a {
+	display: inline-block;
+	float: center;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	width: 20%;
+}
+
+#nav_box a:hover {
+	background-color: #111;
+	color: #DAA520;
+}
+
+#content {
+    background-color: black;
+}
+#content_section {
+    margin: 0 auto 0 auto;
+    max-width: 1200px;
+}
+
+#content_logo_pict {
+	margin: 0 auto;
+	width: 50px;
+	content:url(logo_secondary.png);
+}
+
+#homepage_content_table_movie {
+    margin: 0 auto;
+    width: 100%;
+    padding: 6px;
+    text-align: center;
+}
+#homepage_content_table_movie img {
+    width: 90%;
+    height: auto;
+    padding: 0 10px 0 10px;
+}
+#homepage_content_table_news {
+    margin: 0 auto;
+    width: 100%;
+    padding: 6px;
+    border-collapse: collapse;
+}
+img#home_movie_pict{
+	width: 150px;
+}
+
+img#home_ads_wide{
+	margin: 10px 0px;
+	width: 100%;
+	max-width: 700px;
+}
+
+img#home_ads{
+	margin: 10px 0px;
+	width: 100px;
+	max-width: 350px;
+}
+
+#login_content_section {
+    text-align: left;
+    color: black;
+    margin: 0 auto 0 auto;
+    max-width: 1000px;
+    background-color:white;
+}
+#login_content_table {
+    width: 60%;
+    margin: 0 auto 0 auto;
+}
+#login_content_fieldset {
+    background-color: gray;
+}
+#moviepage_table_movie {
+    margin: 0 auto;
+    width: 100%;
+    padding: 6px;
+    text-align: center;
+}
+#moviepage_table_movie img {
+    display: block;
+    max-width:230px;
+    max-height:95px;
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+#movie_description {
+    text-align: left;
+}
+#checkout_content_table {
+    width: 100%;
+    text-align: left;
+}
+#checkout_content_td_picture {
+    width: 30%;
+    text-align: center;
+}
+#checkout_content_td_picture img {
+    width: 80%;
+    height: auto;
+    position: sticky;
+    top: 20px;
+}
+#checkout_content_td_description {
+}
+#checkout_content_td_description table {
+    text-align:left;
+}
+#checkout_content_td_timing {
+	background-color: #232323;
+}
+#checkout_content_td_timing table select {
+	width: 250px;
+	height: 30px;
+	margin-left: 20px;
+	padding: 5px;
+	border-radius: 3px;
+
+}
+
+.checkout_timing_btn {
+	background-color: #91bbff;
+	border-radius: 12px;
+	color: white;
+	padding: 5px 20px;
+	font-size: 15px;
+	cursor: pointer;
+	margin: 12px 50px 2px 20px;
+}
+
+#checkout_content_td_seating {
+}
+#checkout_content_td_seating table {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+#checkout_content_td_seating table table {
+    margin: 0 auto;
+    width: 80%;
+}
+#checkout_content_td_seating table table td {
+    max-width: 10px;
+}
+.checkout_content_seating_alphabet {
+}
+.checkout_content_seating_box {
+    background-color:blue;
+}
+.checkout_content_seating_gap {
+    background-color: transparent;
+}
+#checkout_content_td_payment {
+}
+#checkout_content_td_payment table {
+    margin: 0 auto;
+    width: 100%;
+}
+#checkout_content_td_payment table td {
+    width: 25%;
+    text-align: center;
+}
+#checkout_content_td_payment table th {
+    width: 25%;
+    text-align: center;
+}
+#contact_us {
+    border-style: solid;
+    border-collapse: collapse;
+    width: 90%;
+	margin: 0 auto;
+}
+#contact_us th {
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: left;
+}
+#footer {
+    margin: 60px 0 0 0;
+    padding: 20px 0 20px 0;
+    background-color: #232323;
+}
+#footer_section {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+}
+#footer_content {
+    background-color: transparent;
+    font-family: Arial, sans-serif;
+}
+#footer_content a:link {
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+#footer_content a:visited {
+    text-decoration: none;
+    color:Grey;
+}
+#footer_copyright {
+    background-color: transparent;
+    margin: 10px 0px;
+}
+#footer_table th {
+    width: 1200px;
+}
+#fb_logo {
+    height:30px;
+    width:30px;
+}
+#visa_logo {
+    height:30px;
+    width:45px;
+}
+#cert_logo {
+    height:45px;
+    width:90px;
+}

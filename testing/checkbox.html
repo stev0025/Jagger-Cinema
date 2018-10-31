@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+		<style>
+			body {
+				position: absolute;
+				top: 50%;
+				width: 100%;
+				text-align: center;
+			}
+			
+			input {
+				-webkit-appearance: none;
+				cursor: pointer;
+				height: 25px;
+				width: 25px;
+				border-radius: 5px;
+			}
+			
+			.empty {
+				background-color: #0000cd;
+			}
+			
+			.empty:hover {
+				background-color: #4169e1;
+			}
+
+			.empty:checked {
+				background-color: #8470ff;
+			}
+			
+			.booked {
+				background-color: #800080;
+			}
+			
+			.booked:hover {
+				cursor: context-menu;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<input class="empty" type="checkbox" name="seating" value="empty">
+
+		<input class="empty" type="checkbox" name="seating" value="selected" checked>
+		<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+
+	
+	<body>
