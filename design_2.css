@@ -11,10 +11,33 @@ body {
 }
 
 body {
-	
-	
-}
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif; 
+	font-size: 14px; 
+	font-style: normal; 
+	font-variant: normal; 
+	font-weight: 400; 
+	line-height: 20px; 
+	}
 
+body h1 { 
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif; 
+	font-size: 24px; 
+	font-style: normal; 
+	font-variant: normal; 
+	font-weight: 700; 
+	line-height: 26.4px; 
+	} 
+body h3 { 
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif; 
+	font-size: 20px;
+	color: #ffd701;
+	font-style: normal; 
+	font-variant: normal; 
+	font-weight: 700; 
+	line-height: 15.4px; 
+	} 
+	
+	
 #header {
     background-color: black;
     text-align: center;

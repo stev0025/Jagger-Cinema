@@ -1,3 +1,90 @@
+<?php
+$servername = "localhost";
+$username = "f34ee";
+$password = "f34ee";
+$dbname = "f34ee";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$query = "SELECT * FROM `movies` WHERE id='1'";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+$movie_title_box1 = $row['title'];
+$movie_picture_box1 = $row['pict'];
+$movie_detail1_box1 = $row['detail1'];
+$movie_detail2_box1 = $row['detail2'];
+$movie_description_box1 = $row['description'];
+
+$query = "SELECT * FROM `movies` WHERE id='2'";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+$movie_title_box2 = $row['title'];
+$movie_picture_box2 = $row['pict'];
+$movie_detail1_box2 = $row['detail1'];
+$movie_detail2_box2 = $row['detail2'];
+$movie_description_box2 = $row['description'];
+
+$query = "SELECT * FROM `movies` WHERE id='3'";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+$movie_title_box3 = $row['title'];
+$movie_picture_box3 = $row['pict'];
+$movie_detail1_box3 = $row['detail1'];
+$movie_detail2_box3 = $row['detail2'];
+$movie_description_box3 = $row['description'];
+
+$query = "SELECT * FROM `movies` WHERE id='4'";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+$movie_title_box4 = $row['title'];
+$movie_picture_box4 = $row['pict'];
+$movie_detail1_box4 = $row['detail1'];
+$movie_detail2_box4 = $row['detail2'];
+$movie_description_box4 = $row['description'];
+
+$query = "SELECT * FROM `movies` WHERE id='5'";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+$movie_title_box5 = $row['title'];
+$movie_picture_box5 = $row['pict'];
+$movie_detail1_box5 = $row['detail1'];
+$movie_detail2_box5 = $row['detail2'];
+$movie_description_box5 = $row['description'];
+
+$query = "SELECT * FROM `movies` WHERE id='6'";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+$movie_title_box6 = $row['title'];
+$movie_picture_box6 = $row['pict'];
+$movie_detail1_box6 = $row['detail1'];
+$movie_detail2_box6 = $row['detail2'];
+$movie_description_box6 = $row['description'];
+
+$query = "SELECT * FROM `movies` WHERE id='7'";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+$movie_title_box7 = $row['title'];
+$movie_picture_box7 = $row['pict'];
+$movie_detail1_box7 = $row['detail1'];
+$movie_detail2_box7 = $row['detail2'];
+$movie_description_box7 = $row['description'];
+
+$query = "SELECT * FROM `movies` WHERE id='8'";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+$movie_title_box8 = $row['title'];
+$movie_picture_box8 = $row['pict'];
+$movie_detail1_box8 = $row['detail1'];
+$movie_detail2_box8 = $row['detail2'];
+$movie_description_box8 = $row['description'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,68 +143,200 @@
 
             <div id="content">
 				<div id="content_section">
-				    <p style="font-size:130%;">Movies</p>
 				    <table id="hmoviepagetable_movie" border="1">
-				        <tr>
+						<tr>
 				            <td>
-				                <img id="logo_pict" src="https://cdn.shopifycloud.com/hatchful-web/assets/313d73fa42f04a46213abc6267b4d074.png">
-				                <br>Pict1
-				            </td>
+				                <img id="home_movie_pict" src="<?php echo $movie_picture_box1;?>">
+				            </td>
 				            
 				            <td id="movie_description">
-				                <p>Title: <br>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
+				                <h3><?php echo $movie_title_box1;?></h3>
+								<br><br><br>
+								<h3>Details</h3>
+								<table style="width:100%;">
+									<tr>
+										<td>
+											<p><?php echo $movie_detail1_box1;?></p>
+										</td>
+										<td>
+											<p><?php echo $movie_detail2_box1;?></p>
+										</td>
+									</tr>
+								</table>
+								<br><br>
+								<h3>Synopsis</h3>
+								<p><?php echo $movie_description_box1;?></p>
 				            </td>
 				        </tr>
-					        <tr>
+						<tr>
 				            <td>
-				                <img id="logo_pict" src="https://cdn.shopifycloud.com/hatchful-web/assets/313d73fa42f04a46213abc6267b4d074.png">
-				                <br>Pict2
+				                <img id="home_movie_pict" src="<?php echo $movie_picture_box2;?>">
 				            </td>
 				            
 				            <td id="movie_description">
-				                <p>Title: <br>Description:</p>    
+				                <h3><?php echo $movie_title_box2;?></h3>
+								<br><br><br>
+								<h3>Details</h3>
+								<table style="width:100%;">
+									<tr>
+										<td>
+											<p><?php echo $movie_detail1_box2;?></p>
+										</td>
+										<td>
+											<p><?php echo $movie_detail2_box2;?></p>
+										</td>
+									</tr>
+								</table>
+								<br><br>
+								<h3>Synopsis</h3>
+								<p><?php echo $movie_description_box2;?></p>
 				            </td>
 				        </tr>
-					        <tr>
+						<tr>
 				            <td>
-				                <img id="logo_pict" src="https://cdn.shopifycloud.com/hatchful-web/assets/313d73fa42f04a46213abc6267b4d074.png">
-				                <br>Pict3
+				                <img id="home_movie_pict" src="<?php echo $movie_picture_box3;?>">
 				            </td>
 				            
 				            <td id="movie_description">
-				                <p>Title: <br>Description:</p>    
-				            </td>
-				        </tr>		
-				        <tr>
-				            <td>
-				                <img id="logo_pict" src="https://cdn.shopifycloud.com/hatchful-web/assets/313d73fa42f04a46213abc6267b4d074.png">
-				                <br>Pict4
-				            </td>
-				            
-				            <td id="movie_description">
-				                <p>Title: <br>Description:</p>    
+				                <h3><?php echo $movie_title_box3;?></h3>
+								<br><br><br>
+								<h3>Details</h3>
+								<table style="width:100%;">
+									<tr>
+										<td>
+											<p><?php echo $movie_detail1_box3;?></p>
+										</td>
+										<td>
+											<p><?php echo $movie_detail2_box3;?></p>
+										</td>
+									</tr>
+								</table>
+								<br><br>
+								<h3>Synopsis</h3>
+								<p><?php echo $movie_description_box3;?></p>
 				            </td>
 				        </tr>
-				        <tr>
+						<tr>
 				            <td>
-				                <img id="logo_pict" src="https://cdn.shopifycloud.com/hatchful-web/assets/313d73fa42f04a46213abc6267b4d074.png">
-				                <br>Pict5
+				                <img id="home_movie_pict" src="<?php echo $movie_picture_box4;?>">
 				            </td>
 				            
 				            <td id="movie_description">
-				                <p>Title: <br>Description:</p>    
+				                <h3><?php echo $movie_title_box1;?></h3>
+								<br><br><br>
+								<h3>Details</h3>
+								<table style="width:100%;">
+									<tr>
+										<td>
+											<p><?php echo $movie_detail1_box4;?></p>
+										</td>
+										<td>
+											<p><?php echo $movie_detail2_box4;?></p>
+										</td>
+									</tr>
+								</table>
+								<br><br>
+								<h3>Synopsis</h3>
+								<p><?php echo $movie_description_box4;?></p>
 				            </td>
 				        </tr>
-				        <tr>
+						<tr>
 				            <td>
-				                <img id="logo_pict" src="https://cdn.shopifycloud.com/hatchful-web/assets/313d73fa42f04a46213abc6267b4d074.png">
-				                <br>Pict6
+				                <img id="home_movie_pict" src="<?php echo $movie_picture_box5;?>">
 				            </td>
 				            
 				            <td id="movie_description">
-				                <p>Title: <br>Description:</p>    
+				                <h3><?php echo $movie_title_box5;?></h3>
+								<br><br><br>
+								<h3>Details</h3>
+								<table style="width:100%;">
+									<tr>
+										<td>
+											<p><?php echo $movie_detail1_box5;?></p>
+										</td>
+										<td>
+											<p><?php echo $movie_detail2_box5;?></p>
+										</td>
+									</tr>
+								</table>
+								<br><br>
+								<h3>Synopsis</h3>
+								<p><?php echo $movie_description_box5;?></p>
 				            </td>
-				        </tr>				        
+				        </tr>
+						<tr>
+				            <td>
+				                <img id="home_movie_pict" src="<?php echo $movie_picture_box6;?>">
+				            </td>
+				            
+				            <td id="movie_description">
+				                <h3><?php echo $movie_title_box1;?></h3>
+								<br><br><br>
+								<h3>Details</h3>
+								<table style="width:100%;">
+									<tr>
+										<td>
+											<p><?php echo $movie_detail1_box6;?></p>
+										</td>
+										<td>
+											<p><?php echo $movie_detail2_box6;?></p>
+										</td>
+									</tr>
+								</table>
+								<br><br>
+								<h3>Synopsis</h3>
+								<p><?php echo $movie_description_box6;?></p>
+				            </td>
+				        </tr>
+						<tr>
+				            <td>
+				                <img id="home_movie_pict" src="<?php echo $movie_picture_box7;?>">
+				            </td>
+				            
+				            <td id="movie_description">
+				                <h3><?php echo $movie_title_box7;?></h3>
+								<br><br><br>
+								<h3>Details</h3>
+								<table style="width:100%;">
+									<tr>
+										<td>
+											<p><?php echo $movie_detail1_box7;?></p>
+										</td>
+										<td>
+											<p><?php echo $movie_detail2_box7;?></p>
+										</td>
+									</tr>
+								</table>
+								<br><br>
+								<h3>Synopsis</h3>
+								<p><?php echo $movie_description_box7;?></p>
+				            </td>
+				        </tr>
+						<tr>
+				            <td>
+				                <img id="home_movie_pict" src="<?php echo $movie_picture_box8;?>">
+				            </td>
+				            
+				            <td id="movie_description">
+				                <h3><?php echo $movie_title_box8;?></h3>
+								<br><br><br>
+								<h3>Details</h3>
+								<table style="width:100%;">
+									<tr>
+										<td>
+											<p><?php echo $movie_detail1_box8;?></p>
+										</td>
+										<td>
+											<p><?php echo $movie_detail2_box8;?></p>
+										</td>
+									</tr>
+								</table>
+								<br><br>
+								<h3>Synopsis</h3>
+								<p><?php echo $movie_description_box8;?></p>
+				            </td>
+				        </tr>
+						
 				    </table>
  
 				</div>
