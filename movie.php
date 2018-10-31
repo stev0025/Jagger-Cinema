@@ -55,8 +55,8 @@
 
 
             <div id="content">
-				<div id="content_section">I
-				    <p style="font-family:arial; font-size:130%;">&nbsp;Movies</p>
+				<div id="content_section">
+				    <p style="font-size:130%;">Movies</p>
 				    <table id="hmoviepagetable_movie" border="1">
 				        <tr>
 				            <td>
