@@ -70,20 +70,25 @@ session_start();
 			<div id="content">
 				<div id="content_section">
 				<img id="content_logo_pict">			
-				<form>
-				    <fieldset>
-				        <h1 style="font-family:arial; font-size:130%;">About Jagger Cinemas</h1>
-    					<p style="font-family:arial;">Jagger Cinema is an emerging cinema franchise alongside big-name players
-                            within Singapore such as Golden Village and Shaw theatres.<br>The newest, hottest
-                            movies are screened here and we ensure that any esteemed customers will find an
-                            unequaled experience in movie-watching here.<br>We utilize 4K-resolution top-of-the-
-                            end screen projectors with Dolby surround sound 7.1 for every theatre to maximize
-                            our customer’s enjoyment factor.<br>Established in 2018, Jagger Cinema aims to
-                            provide the widest choice of movies and maximum level of comfort for any enthusiastic visitor.
-                        </p>
-					</fieldset>
-		
-				</form>
+				<table>
+				<tr style="padding: 10px; margin: 10px;">
+				<td>
+					<h1>About Jagger Cinemas</h1>
+					<p>Jagger Cinema is an emerging cinema franchise alongside big-name players
+						within Singapore such as Golden Village and Shaw theatres.<br>The newest, hottest
+						movies are screened here and we ensure that any esteemed customers will find an
+						unequaled experience in movie-watching here.<br>We utilize 4K-resolution top-of-the-
+						end screen projectors with Dolby surround sound 7.1 for every theatre to maximize
+						our customer’s enjoyment factor.<br>Established in 2018, Jagger Cinema aims to
+						provide the widest choice of movies and maximum level of comfort for any enthusiastic visitor.
+					</p>
+				</td>
+				<td>
+					<img src="location.JPG"><br>
+					<p>52 Nanyang Walk, 639928</p>
+				</td>
+				
+				</table>
 				</div>
 			</div>
 			<div id="footer">
@@ -99,14 +104,14 @@ session_start();
                             </tr>
                             <tr>
                                 <td>
-                                    <p><a href = "https://google.com/">Home</a></p>
-                                    <p><a href = "https://google.com/">About JC</a></p>
-                                    <p><a href = "https://google.com/">Jobs at JC</a></p>
+                                    <p><a href = "homepage.php">Home</a></p>
+                                    <p><a href = "about_us.php">About JC</a></p>
+                                    <p><a href = "jobs.php">Jobs at JC</a></p>
                                 </td>
                                 
                                 <td>
-                                    <p><a href = "https://www.facebook.com/"><img id="fb_logo" src="https://www.facebook.com/images/fb_icon_325x325.png"></a></p>
-                                    <p><a href = "https://www.instagram.com/"><img id="fb_logo" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"></a></p>
+                                    <p><a href = "https://www.facebook.com/" target="_blank"><img id="fb_logo" src="https://www.facebook.com/images/fb_icon_325x325.png"></a></p>
+                                    <p><a href = "https://www.instagram.com/" target="_blank"><img id="fb_logo" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"></a></p>
                                 </td>
                                 
                                 <td>

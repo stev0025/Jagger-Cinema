@@ -37,9 +37,12 @@ $sql = "INSERT INTO customers (name, salutation, email, password, phonenumber)
 		VALUES ('$name', '$salutation', '$email', '$password', '$phonenumber')";
 $result = $conn->query($sql);
 
-if (!$result)
-	echo "Your query failed.";
-else
-	echo "Welcome ". $name . ". You are now registered";
-
+if (!$result){
+	echo "Your query failed.<br>";
+	echo '<a href="homepage.php">go back home.</a>';
+}
+else{
+	echo "Welcome ". $name . ". You are now registered<br>";
+	echo '<a href="homepage.php">go back home.</a>';
+}
 ?>

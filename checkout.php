@@ -80,8 +80,20 @@ $movie_description_box1 = $row['description'];
 					</div>
 
 					<div id="login_reg">
-						<a href="registration.php"><input class="btn_reg" type="button" value="register"></a>
-						<a href="login.php"><input class="btn_log" type="button" value="login"></a>
+					
+						<?php
+						if (isset($_SESSION['valid_user']))
+						{
+						echo '<h3>Hi, ' .$_SESSION['valid_user'].' </h3>';
+						echo '<a href="logout.php">Logout</a>';
+						}
+						
+						else {
+						echo "<a href='registration.php'><input class='btn_reg' type='button' value='register'></a>";
+						echo "<a href='login.php'><input class='btn_log' type='button' value='login'></a>";
+						}
+						
+						?>
 					</div>
 				</div>
 			</div>
@@ -180,7 +192,6 @@ $movie_description_box1 = $row['description'];
 			</div>
 			
 			
-			
 			<div id="footer">
                 <div id="footer_section">
                     <div id="footer_content">
@@ -194,14 +205,14 @@ $movie_description_box1 = $row['description'];
                             </tr>
                             <tr>
                                 <td>
-                                    <p><a href = "https://google.com/">Home</a></p>
-                                    <p><a href = "https://google.com/">About JC</a></p>
-                                    <p><a href = "https://google.com/">Jobs at JC</a></p>
+                                    <p><a href = "homepage.php">Home</a></p>
+                                    <p><a href = "about_us.php">About JC</a></p>
+                                    <p><a href = "jobs.php">Jobs at JC</a></p>
                                 </td>
                                 
                                 <td>
-                                    <p><a href = "https://www.facebook.com/"><img id="fb_logo" src="https://www.facebook.com/images/fb_icon_325x325.png"></a></p>
-                                    <p><a href = "https://www.instagram.com/"><img id="fb_logo" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"></a></p>
+                                    <p><a href = "https://www.facebook.com/" target="_blank"><img id="fb_logo" src="https://www.facebook.com/images/fb_icon_325x325.png"></a></p>
+                                    <p><a href = "https://www.instagram.com/" target="_blank"><img id="fb_logo" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"></a></p>
                                 </td>
                                 
                                 <td>
@@ -219,9 +230,9 @@ $movie_description_box1 = $row['description'];
                 <div id="footer_copyright">
                     <p style="font-size:90%;">©2018 Jagger Cinema Pte Ltd. All rights reserved. No part of this website may be reproduced in any form without our written permission.</p>
                 </div>        
-                </div>
-            </div>        
+					</div>
+				</div>        
         </div>
-    </div>
-  </body>
+	</div>
+	</body>
 </html>

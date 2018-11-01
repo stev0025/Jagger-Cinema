@@ -50,6 +50,8 @@
 			}
 
 		</style>
+		
+		<script type="text/javascript" src="seat_calculation.js"></script>
 	</head>
 	<body>
 
@@ -67,9 +69,7 @@
 			}
 		
 		?>
-	
-		<script>
-			
-		</script>
+
+		<span id="total"></span>
 		
 	<body>

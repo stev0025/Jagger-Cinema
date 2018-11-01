@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 $servername = "localhost";
 $username = "f34ee";
 $password = "f34ee";
@@ -57,9 +60,20 @@ $movie_picture_box4 = $row['pict'];
 					</div>
 
 					<div id="login_reg">
-						<a href="registration.php"><input class="btn_reg" type="button" value="register"></a>
-						<a href="login.php"><input class="btn_log" type="button" value="login"></a>
-
+					
+						<?php
+						if (isset($_SESSION['valid_user']))
+						{
+						echo '<h3>Hi, ' .$_SESSION['valid_user'].' </h3>';
+						echo '<a href="logout.php">Logout</a>';
+						}
+						
+						else {
+						echo "<a href='registration.php'><input class='btn_reg' type='button' value='register'></a>";
+						echo "<a href='login.php'><input class='btn_log' type='button' value='login'></a>";
+						}
+						
+						?>
 					</div>
 				</div>
 
@@ -96,77 +110,55 @@ $movie_picture_box4 = $row['pict'];
 
             <div id="content">
 				<div id="content_section">
-				    <table id="homepage_content_table_movie" border="1">
+				    <table id="homepage_content_table_movie">
 				        <tr>
 				            <td>
+								<a href="movie.php">
 				                <img id="home_movie_pict" src="<?php echo $movie_picture_box1;?>">
-
+								</a>
 				            </td>
 				            <td>
+								<a href="movie.php">
 				                <img id="home_movie_pict" src="<?php echo $movie_picture_box2;?>">
-
+								</a>
 				            </td>
 				            <td>
+								<a href="movie.php">
 				                <img id="home_movie_pict" src="<?php echo $movie_picture_box3;?>">
-
+								</a>
 				            </td>
 				            <td>
+								<a href="movie.php">
 				                <img id="home_movie_pict" src="<?php echo $movie_picture_box4;?>">
-
+								</a>
 				            </td>
 				        </tr>
 				        <tr>
-				            <td><?php echo $movie_title_box1;?>
+				            <td><h3><?php echo $movie_title_box1;?>
                             </td>
-				            <td><?php echo $movie_title_box2;?>
+				            <td><h3><?php echo $movie_title_box2;?>
 							</td>
-				            <td><?php echo $movie_title_box3;?>
+				            <td><h3><?php echo $movie_title_box3;?>
 							</td>
-				            <td><?php echo $movie_title_box4;?>
+				            <td><h3><?php echo $movie_title_box4;?>
 							</td>
 
 				        </tr>
-				        <tr>
-				            <td>
-				                <img id="home_movie_pict">
 
-				            </td>
-				            <td>
-				                <img id="home_movie_pict">
-
-				            </td>
-				            <td>
-				                <img id="home_movie_pict">
-
-				            </td>
-				            <td>
-				                <img id="home_movie_pict">
-
-				            </td>
-				        </tr>
-				        <tr>
-				            <td>
-                            </td>
-				            <td></td>
-				            <td></td>
-				            <td></td>
-
-				        </tr>
-				        
 				    </table>
 				    
 				    <br><br>
 				    <hr>
 				    <br><br>
-				    <p>Latest News!</p>
+				    <h3>Latest News!</h3>
 				    
-				    <table id="homepage_content_table_news" border="1">
+				    <table id="homepage_content_table_news">
 				        <tr>
 				            <td colspan="2">
 				                <img id="home_ads_wide" src="ads_wide.jpg">
 				            </td>
 				            <td>
-				                <img id="home_ads" src="ads1.jpg">
+				                <img id="home_ads" src="ads1.jpg" alt="NTU">
 				            </td>
 				        </tr>
 				        <tr>
@@ -200,14 +192,14 @@ $movie_picture_box4 = $row['pict'];
                             </tr>
                             <tr>
                                 <td>
-                                    <p><a href = "https://google.com/">Home</a></p>
-                                    <p><a href = "https://google.com/">About JC</a></p>
-                                    <p><a href = "https://google.com/">Jobs at JC</a></p>
+                                    <p><a href = "homepage.php">Home</a></p>
+                                    <p><a href = "about_us.php">About JC</a></p>
+                                    <p><a href = "jobs.php">Jobs at JC</a></p>
                                 </td>
                                 
                                 <td>
-                                    <p><a href = "https://www.facebook.com/"><img id="fb_logo" src="https://www.facebook.com/images/fb_icon_325x325.png"></a></p>
-                                    <p><a href = "https://www.instagram.com/"><img id="fb_logo" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"></a></p>
+                                    <p><a href = "https://www.facebook.com/" target="_blank"><img id="fb_logo" src="https://www.facebook.com/images/fb_icon_325x325.png"></a></p>
+                                    <p><a href = "https://www.instagram.com/" target="_blank"><img id="fb_logo" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"></a></p>
                                 </td>
                                 
                                 <td>
@@ -225,9 +217,9 @@ $movie_picture_box4 = $row['pict'];
                 <div id="footer_copyright">
                     <p style="font-size:90%;">©2018 Jagger Cinema Pte Ltd. All rights reserved. No part of this website may be reproduced in any form without our written permission.</p>
                 </div>        
-                </div>
-            </div>        
+					</div>
+				</div>        
         </div>
-    </div>
-  </body>
+	</div>
+	</body>
 </html>
