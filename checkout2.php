@@ -28,6 +28,34 @@ $movie_detail2_box1 = $row['detail2'];
 $movie_description_box1 = $row['description'];
 
 
+function resultToArray($result) {
+    $rows = array();
+    while($row = $result->fetch_assoc()) {
+        $rows[] = $row;
+    }
+    return $rows;
+}
+
+$queryAvail = "SELECT * FROM `availability` WHERE title='$movie'";
+$resultAvail = $conn->query($queryAvail);
+$rowAvail = resultToArray($resultAvail);
+//var_dump($rowAvail);
+
+#if(isset($_POST['date'])){
+$date = $_POST['dateBox'];
+#}
+
+$timing = $_POST['timingBtn'];
+$queryBoxes = "SELECT * FROM `availability` WHERE title='$movie' AND dayofweek='$date' AND timing='$timing'";
+$resultBoxes = $conn->query($queryBoxes);
+$rowBoxes = resultToArray($resultBoxes);
+var_dump($rowBoxes);
+
+###check array
+foreach ($rowBoxes as $item){
+	echo $item;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -167,25 +195,25 @@ $movie_description_box1 = $row['description'];
 										<tr>
 											<td>
 												<br>
-												Date: <Select>
-													<option name = "dateBox" value = "01/10/18">01/10/18</option>
-													<option name = "dateBox" value = "01/10/18">01/10/18</option>
-													<option name = "dateBox" value = "01/10/18">01/10/18</option>
-													<option name = "dateBox" value = "01/10/18">01/10/18</option>
-													<option name = "dateBox" value = "01/10/18">01/10/18</option>
-													<option name = "dateBox" value = "01/10/18">01/10/18</option>
-													<option name = "dateBox" value = "01/10/18">01/10/18</option>
+												Date: <Select name = "dateBox">
+													<option value = "1-Nov-2018">01/11/18</option>
+													<option value = "2-Nov-2018">02/11/18</option>
+													<option value = "01/10/18">01/10/18</option>
+													<option value = "01/10/18">01/10/18</option>
+													<option value = "01/10/18">01/10/18</option>
+													<option value = "01/10/18">01/10/18</option>
+													<option value = "01/10/18">01/10/18</option>
 												</select>
 											</td>
 										</tr>
 										<tr>
 											<td>
 												Timing:<br>
-												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="09.30">
-												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="11.30">
-												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="14.30"><br>
-												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="17.30">
-												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="20.30"><br><br>
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="0930">
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="1130">
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="1430"><br>
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="1730">
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="2030"><br><br>
 												
 											</td>
 										</tr>
