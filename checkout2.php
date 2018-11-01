@@ -49,12 +49,22 @@ $timing = $_POST['timingBtn'];
 $queryBoxes = "SELECT * FROM `availability` WHERE title='$movie' AND dayofweek='$date' AND timing='$timing'";
 $resultBoxes = $conn->query($queryBoxes);
 $rowBoxes = resultToArray($resultBoxes);
-var_dump($rowBoxes);
+#var_dump($rowBoxes);
+print_r ($rowBoxes);
+#Array ( [0] => Array ( [id] => 1 [title] => Venom [dayofweek] => 1-Nov-2018 [timing] => 0930 [seatcode] => 0 [bookingstatus] => 0 ) )
+echo $rowBoxes[0]['bookingstatus'];
+echo $rowBoxes[0]['timing'];
+
+
+#echo $rowBoxes[1][1];
 
 ###check array
-foreach ($rowBoxes as $item){
-	echo $item;
+foreach ($rowBoxes as $item=>$value){
+#	echo $item;
+#	echo $value;
 }
+
+
 
 ?>
 
@@ -97,6 +107,32 @@ foreach ($rowBoxes as $item){
 			}
 
 		</style>
+		<script>
+		//Calculate number of seats checked and total price		
+			function calculateSeat() {
+				var quan = 0;
+				var seats = document.getElementsByName("seating");
+				for (var i = 0, length = seats.length; i < length; i++)
+				{
+					if (seats[i].checked)
+					{
+						quan +=1;
+					}
+				}
+
+				document.getElementById("quantity").innerHTML = quan;
+				document.getElementById("total1").innerHTML = "$" + quan * 5;
+				document.getElementById("total2").innerHTML = "$" + quan * 5;
+				
+			}
+
+			function calculatePrice() {
+
+				calculateSeat();
+
+			}
+			setInterval(calculatePrice, 50);
+		</script>
     </head>
 
 	<body>
@@ -177,9 +213,7 @@ foreach ($rowBoxes as $item){
                                         <td colspan="2">
                                             <p>Synopsis:</p>
 											<?php echo $movie_description_box1;?>
-                                        <br><br>
-										<hr>
-										<br><br>
+                                        <hr>
 										</td>
                                     </tr>
 									
@@ -222,93 +256,100 @@ foreach ($rowBoxes as $item){
 							</form>
                         </tr>
                         <tr>
-							
 							<td id="checkout_content_td_seating">
-								<br><br>
 								<table>
-                                    <tr>
-										<span>A</span>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<span>A</span><br>
-									</tr>
-                                    <tr>
-										<span>B</span>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<span>B</span><br>
-									</tr>
-                                    <tr>
-										<span>C</span>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<span>C</span><br>
-									</tr>
-                                    <tr>
-										<span>D</span>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<span>D</span><br>
-									</tr>
-                                </table>
-								<br><br>
-							</td>
+								<?php
+                                    echo '<tr>';
+									echo	'<span>A</span>';
+										for($x = 0; $x <= 5; $x++) {
+											if ($rowBoxes[$x]['bookingstatus'] == '0') {
+												echo '<input class="empty" type="checkbox" name="seating" value="empty">';
+											}
+											else {
+												echo '<input class="booked" type="checkbox" name="seating" value="booked" disabled>';
+											}
+										}
+									echo	'<span>A</span><br>';
+									echo	'</tr>';
+
+									echo '<tr>';
+									echo	'<span>B</span>';
+										for($x = 6; $x <= 11; $x++) {
+											if ($rowBoxes[$x]['bookingstatus'] == '0') {
+												echo '<input class="empty" type="checkbox" name="seating" value="empty">';
+											}
+											else {
+												echo '<input class="booked" type="checkbox" name="seating" value="booked" disabled>';
+											}
+										}
+									echo	'<span>B</span><br>';
+									echo	'</tr>';
+
+									echo '<tr>';
+									echo	'<span>C</span>';
+										for($x = 12; $x <= 17; $x++) {
+											if ($rowBoxes[$x]['bookingstatus'] == '0') {
+												echo '<input class="empty" type="checkbox" name="seating" value="empty">';
+											}
+											else {
+												echo '<input class="booked" type="checkbox" name="seating" value="booked" disabled>';
+											}
+										}
+									echo	'<span>C</span><br>';
+									echo	'</tr>';
+
+									echo '<tr>';
+									echo	'<span>D</span>';
+										for($x = 18; $x <= 23; $x++) {
+											if ($rowBoxes[$x]['bookingstatus'] == '0') {
+												echo '<input class="empty" type="checkbox" name="seating" value="empty">';
+											}
+											else {
+												echo '<input class="booked" type="checkbox" name="seating" value="booked" disabled>';
+											}
+										}
+									echo	'<span>D</span><br>';
+									echo	'</tr>';
+
+								?>
+								
+								</table>
+								<span id="total"></span>	
+
+                            </td>
                         </tr>
                         <tr>
                             <td id="checkout_content_td_payment">
-								<script type="text/javascript" src="seat_calculation.js"></script>
                                 <hr>
-                                <br><br>
+                                
                         		<table border="1">
                         			<tr>
-                        				<th><h3>Ticket</th>
-                        				<th><h3>Price</th>
-                        				<th><h3>Quantity</th>
-                        				<th><h3>Total Amount</th>
+                        				<th>Ticket</th>
+                        				<th>Price</th>
+                        				<th>Q</th>
+                        				<th>Total Amount</th>
                         			</tr>
                         			<tr>
-                        				<td><h1><?php echo $movie?></td>
-                        				<td><h1>12$</td>
-                        				<td id="ticket_quantity"></td>
-                        				<td id="total_amount"></td>
+                        				<td><?php echo $movie?></td>
+                        				<td>$5</td>
+                        				<td id = "quantity"></td>
+                        				<td id = "total1"></td>
+                        			</tr>
+                        			<tr>
+                        			    <td colspan="3">Total</td>
+                        			    <td id = "total2"></td>
                         			</tr>
                         		</table>
                         		<br><br>
-								
-                        		<?php
-								
-								if (isset($_SESSION['valid_user'])) {
-									echo '<h1>Customer: ' .$_SESSION['valid_user'].' </h1><br><br>';
-								}
-								else {									
-									echo '<fieldset style="border:0px">';
-									echo '	<label>Email: <input></label><br><br>';
-									echo '	<label>Name: <input></label>';
-									echo '</fieldset>';
-									echo '<br><br>';
-								}
-								?>
-								
-                        		<h3>Payment type:</h3>
-                        		<input type="radio" name="payment_option" checked> Visa
-						        <input type="radio" name="payment_option"> Paypal
-						        <input type="radio" name="payment_option"> Master
+                        		<fieldset style="border:0px">
+                        		    <label>Email: <input></label><br><br>
+                        		    <label>Name: <input></label>
+                        		</fieldset>
+                        		<br><br>
+                        		<p>Payment type:</p>
+                        		<input type="radio" checked> Visa
+						        <input type="radio"> Paypal
+						        <input type="radio"> Master
                         		                            
                         	</td>
                         </tr>
