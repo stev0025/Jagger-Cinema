@@ -29,7 +29,8 @@ $phonenumber = $_POST['phonenumber'];
 
 
 if ($password != $password2) {
-	echo "Sorry passwords do not match";
+	echo "Sorry passwords do not match<br>";
+	echo '<a href="registration.php">Redo registration.</a>';
 	exit;
 }
 

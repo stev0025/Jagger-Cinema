@@ -79,7 +79,9 @@ $movie_picture_box4 = $row['pict'];
 
             </div>
             <div id="slideshow">
+				<a href="movie.php">
 				<div class="slide-section-border slide-section"></div>
+				</a>
             </div>
 			<div id="navigation">
 				<div id="navigation_section">

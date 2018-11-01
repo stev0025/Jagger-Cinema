@@ -68,14 +68,13 @@ session_start();
 				</div>
 			</div>
 			<div id="content">
-				<div id="content_section">
-				<img id="content_logo_pict">			
+				<div id="content_section">			
 				<form>
-					<p>Please feel free to contact us at the following:</p>
+					<h3><img id="content_logo_pict">Please feel free to contact us at the following:</h3>
 					    <table id="contact_us" border=1>
 					    <tr>
-					        <th>Name of company:</th>
-					        <th>Jagger Cinema</th>
+					        <td>Name of company:</td>
+					        <td>Jagger Cinema</td>
 					    </tr>
 					    <tr>
 					        <td>Address:</td>

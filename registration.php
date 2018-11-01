@@ -11,7 +11,14 @@ session_start();
         <title>Registration - Jagger Cinema</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="design_2.css">
-    
+		<style>
+			legend {
+				background-color: white;
+				color: black;
+			}
+		</style>
+		<script type="text/javascript" src="reg_validator.js"></script>
+		
     </head>
 
 	<body>
@@ -70,23 +77,23 @@ session_start();
 			
 			<div id="content">
 				<div id="login_content_section">
-				<img style="width:100px; margin-left:100px;" id="logo_pict">			
-				<form action="register.php" method="POST">
-					<table id="login_content_table">
+				<img id="content_logo_pict">			
+				<form action="register.php" method="POST" id="reg_form">
+					<table style="color:white;" id="login_content_table">
 					    <tr><td>
-					<fieldset id="login_content_fieldset"><legend style="background-color: white">Login Info</legend>
+					<fieldset id="login_content_fieldset"><legend>Login Info</legend>
 					<label>E-mail:
-					<input type="text" name="email" size="30"></label> <br><br>
+					<input type="email" name="email" id="email" size="30"></label> <br><br>
 					<label>Password:
-					<input type="password" name="password"></label> <br><br>
+					<input type="password" name="password" id="password"></label> <br><br>
 					<label>Password confirmation:
-					<input type="password" name="password2"></label>
+					<input type="password" name="password2" id="password2"></label>
 					</fieldset>
 					<br><br>
 					
-					<fieldset id="login_content_fieldset"><legend style="background-color: white">Personal Info</legend>
+					<fieldset id="login_content_fieldset"><legend>Personal Info</legend>
 					<label>Name:
-					<input type="text" name="name" size="30"></label> <br><br>
+					<input type="text" name="name" id="name" size="30"></label> <br><br>
 					<label>Salutation:
 					<select name="salutation">
 						<option value="Mr.">Mr.</option>
@@ -101,11 +108,14 @@ session_start();
 					<br>
 					<input type="reset" value="Reset">
 					<input type="submit" value="Submit">
-					
+					<br><br>
 					</td></tr>
 					</table>
 					
 				</form>
+				<script type="text/javascript">
+					document.getElementById("reg_form").onsubmit = validateForm;
+				</script>
 				</div>
 			</div>
 			

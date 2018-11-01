@@ -66,12 +66,12 @@ session_start();
 					</div>         
 				</div>
 			</div>
-			<div id="content" style="text-align: left;">
+			<div id="content">
 				<div id="content_section">
-				<img id="content_logo_pict">			
+							
 				
-					<h3>The following positions are available:</h3>
-					    <table id="contact_us" border=1>
+					<h3><img id="content_logo_pict">The following positions are available:</h3>
+					    <table style="text-align: left;" id="contact_us" border=1>
 					    <tr>
 					        <th><h1>Job Position</h1></th>
 					        <th><h1>Requirements & Job Scope</h1></th>
@@ -89,6 +89,8 @@ session_start();
 					        <td>Duties : Cashiering, food preparation, ushering and general cleaning.</td>			        
 					    </tr>					    
 					    </table>
+						
+						<p>If you are interested, you can contact us by sending email to <span style="color:red;">YiinLih@jagger.com</span></p>
 				
 				</div>
 			</div>

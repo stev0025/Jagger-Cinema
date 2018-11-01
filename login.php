@@ -107,7 +107,7 @@ $conn->close();
 				
 				if (isset($_SESSION['valid_user']))
 				{	
-					echo 'Welcome ' .$_SESSION['valid_user'].' <br/>';
+					echo '<br>Welcome ' .$_SESSION['valid_user'].' <br/>';
 					echo '<a href="logout.php">Logout</a><br />';
 				}
 				else
@@ -115,7 +115,7 @@ $conn->close();
 					if (isset($email))
 					{
 						// if they failed to log in
-						echo '<p style="text-color:red">Invalid user id or password.</p>';
+						echo '<p style="color:red; text-align:center; text-decoration: underline;">Invalid email or password.</p>';
 					}
 					
 				// the form to log in
@@ -125,13 +125,13 @@ $conn->close();
 				echo '	    <tr><td>';
 				echo '		<fieldset id="login_content_fieldset">';
 				echo '		<label>E-mail:';
-				echo ' 		<input type="text" name="email" size="30"></label> <br><br>';
+				echo ' 		<input type="email" name="email" size="30"></label> <br><br>';
 				echo '		<label>Password:';
-				echo '		<input type="text" name="password"></label>';
-				echo '		</fieldset>';
+				echo '		<input type="password" name="password"></label>';
+				echo '		</fieldset><br>';
 	
-				echo '		<input type="submit" value="Apply Now">';
-				echo '		<p>click here to <a href="www.google.com">sign up</a></p>';
+				echo '		<input type="submit" value="Apply Now"><br>';
+				echo '		<p>click here to <a href="registration.php">sign up</a></p>';
 					
 				echo '		</td></tr>';
 				echo '	</table>';
