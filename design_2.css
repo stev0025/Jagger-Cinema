@@ -210,13 +210,13 @@ img#home_movie_pict{
 
 img#home_ads_wide{
 	margin: 10px 0px;
-	width: 150%;
+	width: 100%;
 	max-width: 1200px;
 }
 
 img#home_ads{
 	margin: 10px 0px;
-	width: 200px;
+	width: 100%;
 	max-width: 350px;
 }
 
