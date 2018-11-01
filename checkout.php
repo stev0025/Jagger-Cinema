@@ -174,54 +174,47 @@ $movie_description_box1 = $row['description'];
 							</form>
                         </tr>
                         <tr>
+							<form action= "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                             <td id="checkout_content_td_seating">
                                 <table>
                                     <tr>
 										<span>A</span>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
 										<span>A</span><br>
 									</tr>
                                     <tr>
 										<span>B</span>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
 										<span>B</span><br>
 									</tr>
                                     <tr>
 										<span>C</span>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
 										<span>C</span><br>
 									</tr>
                                     <tr>
 										<span>D</span>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
-										<input class="empty" type="checkbox" name="seating" value="empty">
-										<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating[]" value="empty">
 										<span>D</span><br>
 									</tr>
                                 </table>
