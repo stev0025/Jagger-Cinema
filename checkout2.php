@@ -149,7 +149,9 @@ $movie_description_box1 = $row['description'];
                                         <td colspan="2">
                                             <p>Synopsis:</p>
 											<?php echo $movie_description_box1;?>
-                                        <hr>
+                                        <br><br>
+										<hr>
+										<br><br>
 										</td>
                                     </tr>
 									
@@ -192,83 +194,93 @@ $movie_description_box1 = $row['description'];
 							</form>
                         </tr>
                         <tr>
+							
 							<td id="checkout_content_td_seating">
+								<br><br>
 								<table>
                                     <tr>
 										<span>A</span>
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
 										<span>A</span><br>
 									</tr>
                                     <tr>
 										<span>B</span>
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
 										<span>B</span><br>
 									</tr>
                                     <tr>
 										<span>C</span>
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
 										<span>C</span><br>
 									</tr>
                                     <tr>
 										<span>D</span>
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
+										<input class="empty" type="checkbox" name="seating" value="empty">
 										<span>D</span><br>
 									</tr>
                                 </table>
-                            </td>
+								<br><br>
+							</td>
                         </tr>
                         <tr>
                             <td id="checkout_content_td_payment">
+								<script type="text/javascript" src="seat_calculation.js"></script>
                                 <hr>
-                                
+                                <br><br>
                         		<table border="1">
                         			<tr>
-                        				<th>Ticket</th>
-                        				<th>Price</th>
-                        				<th>Q</th>
-                        				<th>Total Amount</th>
+                        				<th><h3>Ticket</th>
+                        				<th><h3>Price</th>
+                        				<th><h3>Quantity</th>
+                        				<th><h3>Total Amount</th>
                         			</tr>
                         			<tr>
-                        				<td><?php echo $movie?></td>
-                        				<td>5$</td>
-                        				<td>2</td>
-                        				<td>20$</td>
-                        			</tr>
-                        			<tr>
-                        			    <td colspan="3">Total</td>
-                        			    <td>20$</td>
+                        				<td><h1><?php echo $movie?></td>
+                        				<td><h1>12$</td>
+                        				<td id="ticket_quantity"></td>
+                        				<td id="total_amount"></td>
                         			</tr>
                         		</table>
                         		<br><br>
-                        		<fieldset style="border:0px">
-                        		    <label>Email: <input></label><br><br>
-                        		    <label>Name: <input></label>
-                        		</fieldset>
-                        		<br><br>
-                        		<p>Payment type:</p>
-                        		<input type="radio" checked> Visa
-						        <input type="radio"> Paypal
-						        <input type="radio"> Master
+								
+                        		<?php
+								
+								if (isset($_SESSION['valid_user'])) {
+									echo '<h1>Customer: ' .$_SESSION['valid_user'].' </h1><br><br>';
+								}
+								else {									
+									echo '<fieldset style="border:0px">';
+									echo '	<label>Email: <input></label><br><br>';
+									echo '	<label>Name: <input></label>';
+									echo '</fieldset>';
+									echo '<br><br>';
+								}
+								?>
+								
+                        		<h3>Payment type:</h3>
+                        		<input type="radio" name="payment_option" checked> Visa
+						        <input type="radio" name="payment_option"> Paypal
+						        <input type="radio" name="payment_option"> Master
                         		                            
                         	</td>
                         </tr>
