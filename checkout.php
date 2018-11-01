@@ -1,4 +1,7 @@
 <?php	
+
+session_start();
+
 $servername = "localhost";
 $username = "f34ee";
 $password = "f34ee";
@@ -12,6 +15,7 @@ if (!$conn) {
 }
 
 $movie = $_POST['selectedMovie'];
+$_SESSION['movie'] = $movie;
 
 $query = "SELECT * FROM `movies` WHERE title='$movie'";
 $result = $conn->query($query);
@@ -110,7 +114,7 @@ $movie_description_box1 = $row['description'];
 			
 			<div id="content">
 				<div id="content_section">
-					<form>
+					
                     <table id="checkout_content_table">
                         <tr>
                             <td id="checkout_content_td_picture" rowspan="4">
@@ -141,7 +145,7 @@ $movie_description_box1 = $row['description'];
                             </td>
                         </tr>
                         <tr>
-							<form action= "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+							<form action= "checkout2.php" method="post">
 								<td id="checkout_content_td_timing">
 									
 									<table>
@@ -149,10 +153,6 @@ $movie_description_box1 = $row['description'];
 											<td>
 												<br>
 												Date: <Select>
-													<option name = "dateBox" value = "01/10/18">01/10/18</option>
-													<option name = "dateBox" value = "01/10/18">01/10/18</option>
-													<option name = "dateBox" value = "01/10/18">01/10/18</option>
-													<option name = "dateBox" value = "01/10/18">01/10/18</option>
 													<option name = "dateBox" value = "01/10/18">01/10/18</option>
 													<option name = "dateBox" value = "01/10/18">01/10/18</option>
 													<option name = "dateBox" value = "01/10/18">01/10/18</option>
@@ -167,96 +167,15 @@ $movie_description_box1 = $row['description'];
 												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="14.30"><br>
 												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="17.30">
 												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="20.30"><br><br>
+												
 											</td>
 										</tr>
 									</table>
 								</td>
 							</form>
                         </tr>
-                        <tr>
-							<form action= "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                            <td id="checkout_content_td_seating">
-                                <table>
-                                    <tr>
-										<span>A</span>
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<span>A</span><br>
-									</tr>
-                                    <tr>
-										<span>B</span>
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<span>B</span><br>
-									</tr>
-                                    <tr>
-										<span>C</span>
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<span>C</span><br>
-									</tr>
-                                    <tr>
-										<span>D</span>
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<input class="empty" type="checkbox" name="seating[]" value="empty">
-										<span>D</span><br>
-									</tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="checkout_content_td_payment">
-                                <hr>
-                                
-                        		<table border="1">
-                        			<tr>
-                        				<th>Ticket</th>
-                        				<th>Price</th>
-                        				<th>Q</th>
-                        				<th>Total Amount</th>
-                        			</tr>
-                        			<tr>
-                        				<td><?php echo $movie?></td>
-                        				<td>5$</td>
-                        				<td>2</td>
-                        				<td>20$</td>
-                        			</tr>
-                        			<tr>
-                        			    <td colspan="3">Total</td>
-                        			    <td>20$</td>
-                        			</tr>
-                        		</table>
-                        		<br><br>
-                        		<fieldset style="border:0px">
-                        		    <label>Email: <input></label><br><br>
-                        		    <label>Name: <input></label>
-                        		</fieldset>
-                        		<br><br>
-                        		<p>Payment type:</p>
-                        		<input type="radio" checked> Visa
-						        <input type="radio"> Paypal
-						        <input type="radio"> Master
-                        		                            
-                        	</td>
-                        </tr>
                     </table>
-					</form>
+					
 				</div>
 			</div>
 			
