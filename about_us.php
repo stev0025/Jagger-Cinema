@@ -69,11 +69,11 @@ session_start();
 
 			<div id="content">
 				<div id="content_section">
-				<img id="content_logo_pict">			
+								
 				<table>
-				<tr style="padding: 10px; margin: 10px;">
-				<td>
-					<h1>About Jagger Cinemas</h1>
+				<tr style=" margin: 10px;">
+				<td style="text-align:left; max-width: 600px; padding-right: 60px;">
+					<h1><img id="content_logo_pict">About Jagger Cinemas</h1>
 					<p>Jagger Cinema is an emerging cinema franchise alongside big-name players
 						within Singapore such as Golden Village and Shaw theatres.<br>The newest, hottest
 						movies are screened here and we ensure that any esteemed customers will find an
@@ -84,8 +84,10 @@ session_start();
 					</p>
 				</td>
 				<td>
-					<img src="location.JPG"><br>
-					<p>52 Nanyang Walk, 639928</p>
+					<img style="max-width: 300px;" src="location.JPG"><br>
+					<p>Happy Boulevard #05-115<br>
+						Happy Mall<br>
+						Singapore 659283</p>
 				</td>
 				
 				</table>
