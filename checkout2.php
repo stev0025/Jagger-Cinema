@@ -14,9 +14,6 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-echo "$movie";
-var_dump($_SESSION);
-
 $movie = $_SESSION['movie'];
 
 
