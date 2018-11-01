@@ -1,3 +1,14 @@
+<?php
+	$s0 = 1;
+	$s1 = 1;
+	$s2 = 1;
+	$s3 = 1;
+	$s4 = 1;
+	
+	$array = array($s0,$s1,$s2,$s3,$s4);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,10 +53,20 @@
 	</head>
 	<body>
 
-		<input class="empty" type="checkbox" name="seating" value="empty">
+		<?php
+			$arrlength = count($array);
 
-		<input class="empty" type="checkbox" name="seating" value="selected" checked>
-		<input class="booked" type="checkbox" name="seating" value="booked" disabled>
+			for($x = 0; $x < $arrlength; $x++) {
+				
+				if ($array[$x] == 1) {
+					echo '<input class="empty" type="checkbox" name="seating" value="empty">';
+				}
+				else {
+					echo '<input class="booked" type="checkbox" name="seating" value="booked" disabled>';
+				}
+			}
+		
+		?>
 
 	
 	<body>
