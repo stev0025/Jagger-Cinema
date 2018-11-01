@@ -165,8 +165,8 @@ $movie_description_box1 = $row['description'];
 											<td>
 												<br>
 												Date: <Select>
-													<option name = "dateBox" value = "01/10/18">01/10/18</option>
-													<option name = "dateBox" value = "01/10/18">01/10/18</option>
+													<option name = "dateBox" value = "1-Nov-2018">01/11/18</option>
+													<option name = "dateBox" value = "2-Nov-2018">02/11/18</option>
 													<option name = "dateBox" value = "01/10/18">01/10/18</option>
 												</select>
 											</td>
