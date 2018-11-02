@@ -315,7 +315,7 @@ $movie_description_box8 = $row['description'];
 							<tr>
 								<td>
 									<img id="home_movie_pict" src="<?php echo $movie_picture_box7;?>">
-									<input type = "submit" name="selectedMovie" value="Disney's Ralph Breaks The Internet: Wreck-It-Ralph">
+									<input type = "submit" name="selectedMovie" value="Wreck-It-Ralph">
 								</td>
 								
 								<td id="movie_description">

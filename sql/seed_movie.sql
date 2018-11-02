@@ -96,7 +96,7 @@ Distributor: 	SPR
 
 Language: 		English(Sub: Chinese)');
 
-INSERT INTO movies(title,pict,description,detail1,detail2) VALUES ("Disney's Ralph Breaks The Internet: Wreck-It-Ralph",
+INSERT INTO movies(title,pict,description,detail1,detail2) VALUES ("Wreck-It-Ralph",
 "movies\\img6.jpg",
 'Video game bad guy Ralph (voice of John C. Reilly) and fellow misfit Vanellope von Schweetz (voice of Sarah Silverman) navigate the vast and dynamic world wide web in search of a replacement part to save Vanellope’s game, Sugar Rush. ',
 'Cast:		John C. Reilly, Sarah Silverman, Taraji P. Henson, Jack McBrayer, Jane Lynch

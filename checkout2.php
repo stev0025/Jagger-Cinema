@@ -17,7 +17,7 @@ if (!$conn) {
 $movie = $_SESSION['movie'];
 
 
-
+// Retrieve movie information
 $query = "SELECT * FROM `movies` WHERE title='$movie'";
 $result = $conn->query($query);
 $row = $result->fetch_assoc();
@@ -27,7 +27,7 @@ $movie_detail1_box1 = $row['detail1'];
 $movie_detail2_box1 = $row['detail2'];
 $movie_description_box1 = $row['description'];
 
-
+// Function to append retrieved information into an array
 function resultToArray($result) {
     $rows = array();
     while($row = $result->fetch_assoc()) {
@@ -36,34 +36,71 @@ function resultToArray($result) {
     return $rows;
 }
 
+// Retrieve availability table from database (360 variables)
 $queryAvail = "SELECT * FROM `availability` WHERE title='$movie'";
 $resultAvail = $conn->query($queryAvail);
 $rowAvail = resultToArray($resultAvail);
 //var_dump($rowAvail);
 
-#if(isset($_POST['date'])){
-$date = $_POST['dateBox'];
-#}
-
-$timing = $_POST['timingBtn'];
-$queryBoxes = "SELECT * FROM `availability` WHERE title='$movie' AND dayofweek='$date' AND timing='$timing'";
-$resultBoxes = $conn->query($queryBoxes);
-$rowBoxes = resultToArray($resultBoxes);
-#var_dump($rowBoxes);
-print_r ($rowBoxes);
-#Array ( [0] => Array ( [id] => 1 [title] => Venom [dayofweek] => 1-Nov-2018 [timing] => 0930 [seatcode] => 0 [bookingstatus] => 0 ) )
-echo $rowBoxes[0]['bookingstatus'];
-echo $rowBoxes[0]['timing'];
-
+### Retrieve availability table from database (24 variables) 
+if(isset($_POST['dateBox'])){
+	$date = $_POST['dateBox'];
+	$_SESSION['date'] = $date;
+	$timing = $_POST['timingBtn'];
+	$_SESSION['timing'] = $timing;
+	$queryBoxes = "SELECT * FROM `availability` WHERE title='$movie' AND dayofweek='$date' AND timing='$timing'";
+	$resultBoxes = $conn->query($queryBoxes);
+	$rowBoxes = resultToArray($resultBoxes);
+	#var_dump($rowBoxes);
+	print_r ($rowBoxes);
+	#Array ( [0] => Array ( [id] => 1 [title] => Venom [dayofweek] => 1-Nov-2018 [timing] => 0930 [seatcode] => 0 [bookingstatus] => 0 ) )
+	echo $rowBoxes[0]['bookingstatus'];
+	echo $rowBoxes[0]['timing'];
+}
 
 #echo $rowBoxes[1][1];
 
 ###check array
-foreach ($rowBoxes as $item=>$value){
+#foreach ($rowBoxes as $item=>$value){
 #	echo $item;
 #	echo $value;
-}
+#}
 
+
+// When checkout button is clicked, check if email & name is input, then submit order
+if(isset($_POST['checkoutBtn'])) {
+	$timing = $_SESSION['timing'];
+	$date = $_SESSION['date'];
+	$queryBoxes = "SELECT * FROM `availability` WHERE title='$movie' AND dayofweek='$date' AND timing='$timing'";
+	$resultBoxes = $conn->query($queryBoxes);
+	$rowBoxes = resultToArray($resultBoxes);
+	#print_r($seating);
+	if(!empty($_POST['emailBox']) and !empty($_POST['nameBox'])){
+		$email = $_POST['emailBox'];
+		$name = $_POST['nameBox'];
+		$payment = $_POST['payment'];
+		echo "SUCCESSFUL";
+		#echo $email;
+		#echo $name;
+		if(!empty($_POST['seating'])){
+			foreach($_POST['seating'] as $selected){
+				$queryUpdate = "UPDATE `availability` SET bookingstatus = '1' WHERE title='$movie' AND dayofweek='$date' AND timing='$timing' AND seatcode ='$selected'";
+				$result = $conn->query($queryUpdate);
+				echo $selected."</br>";	
+				#$queryOrders = "INSERT INTO orders (title, email, seat, dayofweek, timing) VALUES ('$movie', '$email', $selected, $date, $timing)";
+				$queryOrders = "INSERT INTO orders (title, email, seat, dayofweek, timing, nameCustomer, payment) VALUES ('".$movie."', '".$email."', '".$selected."', '".$date."', '".$timing."', '".$name."', '".$payment."')";
+				echo $movie." ".$email." ".$selected." ".$date." ".$timing;
+				$result = $conn->query($queryOrders);
+			}
+			###Actual update of database
+			
+		}
+	}
+	else {
+		echo "PLEASE ENTER BOTH YOUR EMAIL ADDRESS AND NAME!";
+	}
+
+}
 
 
 ?>
@@ -111,7 +148,7 @@ foreach ($rowBoxes as $item=>$value){
 		//Calculate number of seats checked and total price		
 			function calculateSeat() {
 				var quan = 0;
-				var seats = document.getElementsByName("seating");
+				var seats = document.getElementsByName("seating[]");
 				for (var i = 0, length = seats.length; i < length; i++)
 				{
 					if (seats[i].checked)
@@ -220,9 +257,10 @@ foreach ($rowBoxes as $item=>$value){
                                     
                                 </table>
                             </td>
-                        </tr>
+						</tr>
+						<form action= "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                         <tr>
-							<form action= "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+							
 								<td id="checkout_content_td_timing">
 									
 									<table>
@@ -230,14 +268,12 @@ foreach ($rowBoxes as $item=>$value){
 											<td>
 												<br>
 												Date: <Select name = "dateBox">
-													<option value = "1-Nov-2018">01/11/18</option>
-													<option value = "2-Nov-2018">02/11/18</option>
-													<option value = "01/10/18">01/10/18</option>
-													<option value = "01/10/18">01/10/18</option>
-													<option value = "01/10/18">01/10/18</option>
-													<option value = "01/10/18">01/10/18</option>
-													<option value = "01/10/18">01/10/18</option>
+													<option value = "14-Nov-2018">14/11/18</option>
+													<option value = "15-Nov-2018">15/11/18</option>
+													<option value = "16-Nov-2018">16/11/18</option>
 												</select>
+												<br><br>
+												Day selected:
 											</td>
 										</tr>
 										<tr>
@@ -255,68 +291,71 @@ foreach ($rowBoxes as $item=>$value){
 								</td>
 							</form>
                         </tr>
-                        <tr>
-							<td id="checkout_content_td_seating">
-								<table>
-								<?php
-                                    echo '<tr>';
-									echo	'<span>A</span>';
-										for($x = 0; $x <= 5; $x++) {
-											if ($rowBoxes[$x]['bookingstatus'] == '0') {
-												echo '<input class="empty" type="checkbox" name="seating" value="empty">';
+						<tr>
+							<form action= "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+								<td id="checkout_content_td_seating">
+									<table>
+									<?php
+										echo '<tr>';
+										echo	'<span>A</span>';
+											for($x = 0; $x <= 5; $x++) {
+												if ($rowBoxes[$x]['bookingstatus'] == '0') {
+													echo '<input class="empty" type="checkbox" name="seating[]" value="'.$x.'">';
+												}
+												else {
+													echo '<input class="booked" type="checkbox" name="seating[]" value="booked" disabled>';
+												}
 											}
-											else {
-												echo '<input class="booked" type="checkbox" name="seating" value="booked" disabled>';
-											}
-										}
-									echo	'<span>A</span><br>';
-									echo	'</tr>';
+										echo	'<span>A</span><br>';
+										echo	'</tr>';
 
-									echo '<tr>';
-									echo	'<span>B</span>';
-										for($x = 6; $x <= 11; $x++) {
-											if ($rowBoxes[$x]['bookingstatus'] == '0') {
-												echo '<input class="empty" type="checkbox" name="seating" value="empty">';
+										echo '<tr>';
+										echo	'<span>B</span>';
+											for($x = 6; $x <= 11; $x++) {
+												if ($rowBoxes[$x]['bookingstatus'] == '0') {
+													echo '<input class="empty" type="checkbox" name="seating[]" value="'.$x.'">';
+												}
+												else {
+													echo '<input class="booked" type="checkbox" name="seating[]" value="booked" disabled>';
+												}
 											}
-											else {
-												echo '<input class="booked" type="checkbox" name="seating" value="booked" disabled>';
-											}
-										}
-									echo	'<span>B</span><br>';
-									echo	'</tr>';
+										echo	'<span>B</span><br>';
+										echo	'</tr>';
 
-									echo '<tr>';
-									echo	'<span>C</span>';
-										for($x = 12; $x <= 17; $x++) {
-											if ($rowBoxes[$x]['bookingstatus'] == '0') {
-												echo '<input class="empty" type="checkbox" name="seating" value="empty">';
+										echo '<tr>';
+										echo	'<span>C</span>';
+											for($x = 12; $x <= 17; $x++) {
+												if ($rowBoxes[$x]['bookingstatus'] == '0') {
+													echo '<input class="empty" type="checkbox" name="seating[]" value="'.$x.'">';
+												}
+												else {
+													echo '<input class="booked" type="checkbox" name="seating[]" value="booked" disabled>';
+												}
 											}
-											else {
-												echo '<input class="booked" type="checkbox" name="seating" value="booked" disabled>';
-											}
-										}
-									echo	'<span>C</span><br>';
-									echo	'</tr>';
+										echo	'<span>C</span><br>';
+										echo	'</tr>';
 
-									echo '<tr>';
-									echo	'<span>D</span>';
-										for($x = 18; $x <= 23; $x++) {
-											if ($rowBoxes[$x]['bookingstatus'] == '0') {
-												echo '<input class="empty" type="checkbox" name="seating" value="empty">';
+										echo '<tr>';
+										echo	'<span>D</span>';
+											for($x = 18; $x <= 23; $x++) {
+												if ($rowBoxes[$x]['bookingstatus'] == '0') {
+													echo '<input class="empty" type="checkbox" name="seating[]" value="'.$x.'">';
+												}
+												else {
+													echo '<input class="booked" type="checkbox" name="seating[]" value="booked" disabled>';
+												}
 											}
-											else {
-												echo '<input class="booked" type="checkbox" name="seating" value="booked" disabled>';
-											}
-										}
-									echo	'<span>D</span><br>';
-									echo	'</tr>';
+										echo	'<span>D</span><br>';
+										echo	'</tr>';
 
-								?>
+									?>
+									</table>	
+
+								</td>
 								
-								</table>
-								<span id="total"></span>	
+								<input class="checkout_timing_btn" name = "checkoutBtn" type="submit" value="Check Out">	                            
 
-                            </td>
+							
                         </tr>
                         <tr>
                             <td id="checkout_content_td_payment">
@@ -332,8 +371,8 @@ foreach ($rowBoxes as $item=>$value){
                         			<tr>
                         				<td><?php echo $movie?></td>
                         				<td>$5</td>
-                        				<td id = "quantity"></td>
-                        				<td id = "total1"></td>
+                        				<td id = "quantity" name = "quantityBox"></td>
+                        				<td id = "total1" name = "totalBox"></td>
                         			</tr>
                         			<tr>
                         			    <td colspan="3">Total</td>
@@ -342,17 +381,17 @@ foreach ($rowBoxes as $item=>$value){
                         		</table>
                         		<br><br>
                         		<fieldset style="border:0px">
-                        		    <label>Email: <input></label><br><br>
-                        		    <label>Name: <input></label>
+                        		    <label>Email: <input name="emailBox"></label><br><br>
+                        		    <label>Name: <input name="nameBox"></label>
                         		</fieldset>
                         		<br><br>
                         		<p>Payment type:</p>
-                        		<input type="radio" checked> Visa
-						        <input type="radio"> Paypal
-						        <input type="radio"> Master
-                        		                            
-                        	</td>
-                        </tr>
+                        		<input type="radio" name="payment" value="visa" checked> Visa
+						        <input type="radio" name="payment" value="paypal"> Paypal
+						        <input type="radio" name="payment" value="master"> Master
+							</td>
+						</tr>
+						</form>
                     </table>
 					
 				</div>
