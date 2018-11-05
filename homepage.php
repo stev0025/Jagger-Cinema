@@ -151,21 +151,21 @@ $movie_picture_box4 = $row['pict'];
 				    <table id="homepage_content_table_news">
 				        <tr>
 				            <td colspan="2">
-				                <img id="home_ads_wide" src="ads_wide.jpg">
+				                <img id="home_ads_wide" src="ads\ads_wide.jpg">
 				            </td>
 				            <td>
-				                <img id="home_ads" src="ads1.jpg" alt="NTU">
+				                <img id="home_ads" src="ads\ads1.jpg" alt="NTU">
 				            </td>
 				        </tr>
 				        <tr>
 				            <td>
-				                <img id="home_ads" src="ads2.jpg">
+				                <img id="home_ads" src="ads\ads2.jpg">
 				            </td>
 				            <td>
-				                <img id="home_ads" src="ads3.jpg">
+				                <img id="home_ads" src="ads\ads3.jpg">
 				            </td>
 				            <td>
-				                <img id="home_ads" src="ads4.jpg">				            
+				                <img id="home_ads" src="ads\ads4.jpg">				            
 							</td>
 				        </tr>
 				        
