@@ -1,10 +1,13 @@
-To initialize database, execute the following in order:
+To initialize database, import the files in order:
 ```
-
 1. db_init.sql
 2. seed_movie.sql
 3. seed_customers.sql
-4. 
+4. seed_availability_database_full.sql
+
+or simply just import
+
+1. db_init_full.sql
 ```
 
 ### Movies table
