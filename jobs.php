@@ -8,7 +8,7 @@ session_start();
 <html lang="en">
 
     <head>
-        <title>Jagger Cinema - Jobs</title>
+        <title>Jobs - Jagger Cinema</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="design_2.css">
   
