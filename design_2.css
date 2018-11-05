@@ -187,13 +187,13 @@ body h3 {
     padding: 6px;
     text-align: center;
 }
-#homepage_content_table_movie img {
+#homepage_content_table_movie input {
     width: 90%;
     height: auto;
     padding: 10px;
 }
 
-#homepage_content_table_movie a:hover {
+#homepage_content_table_movie input:hover {
     background-color: #ffd701;
 }
 

@@ -112,27 +112,20 @@ $movie_picture_box4 = $row['pict'];
 
             <div id="content">
 				<div id="content_section">
+					<form method = "post" action = "checkout.php">
 				    <table id="homepage_content_table_movie">
 				        <tr>
 				            <td>
-								<a href="movie.php">
-				                <img id="home_movie_pict" src="<?php echo $movie_picture_box1;?>">
-								</a>
+								<input type="image" src="<?php echo $movie_picture_box1;?>" border="10" alt="Submit" name="selectedMovie" value="Venom">
 				            </td>
 				            <td>
-								<a href="movie.php">
-				                <img id="home_movie_pict" src="<?php echo $movie_picture_box2;?>">
-								</a>
+								<input type="image" src="<?php echo $movie_picture_box2;?>" border="10" alt="Submit" name="selectedMovie" value="First Man">	
 				            </td>
 				            <td>
-								<a href="movie.php">
-				                <img id="home_movie_pict" src="<?php echo $movie_picture_box3;?>">
-								</a>
+								<input type="image" src="<?php echo $movie_picture_box3;?>" border="10" alt="Submit" name="selectedMovie" value="Halloween">	
 				            </td>
 				            <td>
-								<a href="movie.php">
-				                <img id="home_movie_pict" src="<?php echo $movie_picture_box4;?>">
-								</a>
+								<input type="image" src="<?php echo $movie_picture_box4;?>" border="10" alt="Submit" name="selectedMovie" value="Zombiepura">
 				            </td>
 				        </tr>
 				        <tr>
@@ -146,8 +139,9 @@ $movie_picture_box4 = $row['pict'];
 							</td>
 
 				        </tr>
-
+					
 				    </table>
+					</form>
 				    
 				    <br><br>
 				    <hr>
