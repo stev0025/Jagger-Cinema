@@ -52,10 +52,10 @@ if(isset($_POST['dateBox'])){
 	$resultBoxes = $conn->query($queryBoxes);
 	$rowBoxes = resultToArray($resultBoxes);
 	#var_dump($rowBoxes);
-	print_r ($rowBoxes);
+	#print_r ($rowBoxes);
 	#Array ( [0] => Array ( [id] => 1 [title] => Venom [dayofweek] => 1-Nov-2018 [timing] => 0930 [seatcode] => 0 [bookingstatus] => 0 ) )
-	echo $rowBoxes[0]['bookingstatus'];
-	echo $rowBoxes[0]['timing'];
+	#echo $rowBoxes[0]['bookingstatus'];
+	#echo $rowBoxes[0]['timing'];
 }
 
 #echo $rowBoxes[1][1];
@@ -273,12 +273,12 @@ if(isset($_POST['checkoutBtn'])) {
 													<option value = "16-Nov-2018">16/11/18</option>
 												</select>
 												<br><br>
-												Day selected:
+												Day selected: <?php echo $date; ?>
 											</td>
 										</tr>
 										<tr>
 											<td>
-												Timing:<br>
+												Timing selected: <?php echo $timing; ?><br>
 												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="0930">
 												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="1130">
 												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="1430"><br>
