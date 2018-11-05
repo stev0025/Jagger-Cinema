@@ -242,7 +242,10 @@ img#home_ads{
 }
 
 #moviepage_table_movie td {
-	padding: 20px 0;
+	padding: 20px;
+}
+
+#moviepage_table_movie td:first-child {
 }
 
 #movie_description {

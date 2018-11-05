@@ -75,11 +75,12 @@ if(isset($_POST['checkoutBtn'])) {
 	$resultBoxes = $conn->query($queryBoxes);
 	$rowBoxes = resultToArray($resultBoxes);
 	#print_r($seating);
-	if(!empty($_POST['emailBox']) and !empty($_POST['nameBox'])){
+	if(!empty($_POST['emailBox']) and !empty($_POST['nameBox'])){		
 		$email = $_POST['emailBox'];
 		$name = $_POST['nameBox'];
 		$payment = $_POST['payment'];
 		echo "SUCCESSFUL";
+		include 'send_email.php'; #send email to user
 		#echo $email;
 		#echo $name;
 		if(!empty($_POST['seating'])){

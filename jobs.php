@@ -90,7 +90,7 @@ session_start();
 					    </tr>					    
 					    </table>
 						
-						<p>If you are interested, you can contact us by sending email to <span style="color:red;">YiinLih@jagger.com</span></p>
+						<p>If you are interested, you can contact us by sending email to <a href="mailto:ManagementTeam@JaggerCinema.com">ManagementTeam@JaggerCinema.com </a></p>
 				
 				</div>
 			</div>
