@@ -4,7 +4,7 @@ To initialize database, execute the following in order:
 1. db_init.sql
 2. seed_movie.sql
 3. seed_customers.sql
-4. seed_order.
+4. 
 ```
 
 ### Movies table
@@ -14,8 +14,8 @@ To initialize database, execute the following in order:
 | title | varchar(50) |  |
 | pict  | char(10) |  |
 | description | text |  |
-| detail1 | char(4) |  |
-| detail2 | int(10) |  |
+| detail1 | text |  |
+| detail2 | text |  |
 
 ### Customers table
 | Column | Data type | Key |
@@ -34,6 +34,10 @@ To initialize database, execute the following in order:
 | title | varchar(50) |  |
 | email  | varchar(50) |  |
 | seat | int(5) |  |
+| dayofweek | varchar(20) |  |
+| timing | varchar(20) |  |
+| nameCustomer | varchar(100) |  |
+| payment | varchar(20) |  |
 
 ### Availability table
 | Column | Data type | Key |

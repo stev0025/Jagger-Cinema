@@ -292,10 +292,16 @@ if(isset($_POST['checkoutBtn'])) {
 							</form>
                         </tr>
 						<tr>
+							
 							<form action= "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 								<td id="checkout_content_td_seating">
+									<hr>
 									<table>
 									<?php
+										echo '<tr>';
+										echo '<h3> --- screen --- </h3>';
+										echo '</tr>';
+										
 										echo '<tr>';
 										echo	'<span>A</span>';
 											for($x = 0; $x <= 5; $x++) {
@@ -349,11 +355,15 @@ if(isset($_POST['checkoutBtn'])) {
 										echo	'</tr>';
 
 									?>
-									</table>	
+									</table><br>
+									<p>
+										Empty<input class="empty" type="checkbox" disabled>
+										Selected<input class="empty" type="checkbox" checked disabled>
+										Booked<input class="booked" type="checkbox" value="booked" disabled>
 
 								</td>
 								
-								<input class="checkout_timing_btn" name = "checkoutBtn" type="submit" value="Check Out">	                            
+									                            
 
 							
                         </tr>
@@ -363,10 +373,10 @@ if(isset($_POST['checkoutBtn'])) {
                                 
                         		<table border="1">
                         			<tr>
-                        				<th>Ticket</th>
-                        				<th>Price</th>
-                        				<th>Q</th>
-                        				<th>Total Amount</th>
+                        				<th><h3>Ticket</th>
+                        				<th><h3>Price</th>
+                        				<th><h3>Q</th>
+                        				<th><h3>Total Amount</th>
                         			</tr>
                         			<tr>
                         				<td><?php echo $movie?></td>
@@ -380,10 +390,23 @@ if(isset($_POST['checkoutBtn'])) {
                         			</tr>
                         		</table>
                         		<br><br>
-                        		<fieldset style="border:0px">
-                        		    <label>Email: <input name="emailBox"></label><br><br>
-                        		    <label>Name: <input name="nameBox"></label>
-                        		</fieldset>
+								<?php
+								if (isset($_SESSION['valid_user']))
+								{
+								echo '<h3>Ordered by ' .$_SESSION['valid_user'].' </h3>';
+								echo '<input type="hidden" name="emailBox" value="' .$_SESSION['valid_user']. '">';
+								echo '<input type="hidden" name="nameBox" value="customer_login">';
+								}
+								
+								else {
+                        		echo '<fieldset style="border:0px">';
+                        		echo '    <label>Email: <input name="emailBox"></label><br><br>';
+                        		echo '    <label>Name: <input name="nameBox"></label>';
+                        		echo '</fieldset>';
+								}
+								
+								?>
+
                         		<br><br>
                         		<p>Payment type:</p>
                         		<input type="radio" name="payment" value="visa" checked> Visa
@@ -391,8 +414,10 @@ if(isset($_POST['checkoutBtn'])) {
 						        <input type="radio" name="payment" value="master"> Master
 							</td>
 						</tr>
-						</form>
+						
                     </table>
+						<input class="checkout_timing_btn" name = "checkoutBtn" type="submit" value="Check Out">
+						</form>
 					
 				</div>
 			</div>

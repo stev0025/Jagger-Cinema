@@ -260,6 +260,7 @@ img#home_ads{
     width: 80%;
     height: auto;
     top: 20px;
+	position: sticky;
 }
 #checkout_content_td_description {
 }
@@ -289,6 +290,7 @@ img#home_ads{
 }
 
 #checkout_content_td_seating {
+	text-align: center;
 }
 #checkout_content_td_seating table {
     margin: 0 auto;
