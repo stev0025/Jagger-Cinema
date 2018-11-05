@@ -17,6 +17,8 @@ if (!$conn) {
 $movie = $_POST['selectedMovie'];
 $_SESSION['movie'] = $movie;
 
+
+// Retrieve movie information
 $query = "SELECT * FROM `movies` WHERE title='$movie'";
 $result = $conn->query($query);
 $row = $result->fetch_assoc();
@@ -25,7 +27,6 @@ $movie_picture_box1 = $row['pict'];
 $movie_detail1_box1 = $row['detail1'];
 $movie_detail2_box1 = $row['detail2'];
 $movie_description_box1 = $row['description'];
-
 
 ?>
 
@@ -68,6 +69,32 @@ $movie_description_box1 = $row['description'];
 			}
 
 		</style>
+		<script>
+		//Calculate number of seats checked and total price		
+			function calculateSeat() {
+				var quan = 0;
+				var seats = document.getElementsByName("seating[]");
+				for (var i = 0, length = seats.length; i < length; i++)
+				{
+					if (seats[i].checked)
+					{
+						quan +=1;
+					}
+				}
+
+				document.getElementById("quantity").innerHTML = quan;
+				document.getElementById("total1").innerHTML = "$" + quan * 5;
+				document.getElementById("total2").innerHTML = "$" + quan * 5;
+				
+			}
+
+			function calculatePrice() {
+
+				calculateSeat();
+
+			}
+			setInterval(calculatePrice, 50);
+		</script>
     </head>
 
 	<body>
@@ -155,30 +182,33 @@ $movie_description_box1 = $row['description'];
                                     
                                 </table>
                             </td>
-                        </tr>
+						</tr>
+						<form action= "checkout2.php" method="post">
                         <tr>
-							<form action= "checkout2.php" method="post">
+							
 								<td id="checkout_content_td_timing">
 									
 									<table>
 										<tr>
 											<td>
 												<br>
-												Date: <Select>
-													<option name = "dateBox" value = "1-Nov-2018">01/11/18</option>
-													<option name = "dateBox" value = "2-Nov-2018">02/11/18</option>
-													<option name = "dateBox" value = "01/10/18">01/10/18</option>
+												Date: <Select name = "dateBox">
+													<option value = "14-Nov-2018">14/11/18</option>
+													<option value = "15-Nov-2018">15/11/18</option>
+													<option value = "16-Nov-2018">16/11/18</option>
 												</select>
+												<br><br>
+											
 											</td>
 										</tr>
 										<tr>
 											<td>
-												Timing:<br>
-												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="09.30">
-												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="11.30">
-												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="14.30"><br>
-												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="17.30">
-												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="20.30"><br><br>
+												<br>
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="0930">
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="1130">
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="1430"><br>
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="1730">
+												<input class="checkout_timing_btn" name = "timingBtn" type="submit" value="2030"><br><br>
 												
 											</td>
 										</tr>
@@ -186,10 +216,15 @@ $movie_description_box1 = $row['description'];
 								</td>
 							</form>
                         </tr>
+						
+						
                     </table>
+						
+						</form>
 					
 				</div>
 			</div>
+			
 			
 			
 			<div id="footer">
