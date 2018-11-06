@@ -79,7 +79,7 @@ if(isset($_POST['checkoutBtn'])) {
 		$email = $_POST['emailBox'];
 		$name = $_POST['nameBox'];
 		$payment = $_POST['payment'];
-		echo "SUCCESSFUL";
+		
 		include 'send_email.php'; #send email to user
 		#echo $email;
 		#echo $name;
@@ -87,11 +87,13 @@ if(isset($_POST['checkoutBtn'])) {
 			foreach($_POST['seating'] as $selected){
 				$queryUpdate = "UPDATE `availability` SET bookingstatus = '1' WHERE title='$movie' AND dayofweek='$date' AND timing='$timing' AND seatcode ='$selected'";
 				$result = $conn->query($queryUpdate);
-				echo $selected."</br>";	
+				#echo $selected."</br>";	
 				#$queryOrders = "INSERT INTO orders (title, email, seat, dayofweek, timing) VALUES ('$movie', '$email', $selected, $date, $timing)";
 				$queryOrders = "INSERT INTO orders (title, email, seat, dayofweek, timing, nameCustomer, payment) VALUES ('".$movie."', '".$email."', '".$selected."', '".$date."', '".$timing."', '".$name."', '".$payment."')";
-				echo $movie." ".$email." ".$selected." ".$date." ".$timing;
+				#echo $movie." ".$email." ".$selected." ".$date." ".$timing;
 				$result = $conn->query($queryOrders);
+				echo "<script>alert('Tickets successfully purchased! Please check your email. Thank you! - Management Team');</script>";
+
 			}
 			###Actual update of database
 			
@@ -123,6 +125,14 @@ if(isset($_POST['checkoutBtn'])) {
 				border-radius: 5px;
 			}
 			
+			.transparent_box {
+				background-color: transparent;
+				-webkit-appearance: none;
+				height: 25px;
+				width: 25px;
+				border-radius: 5px;
+			}
+
 			.empty:hover {
 				background-color: #4169e1;
 			}
@@ -300,7 +310,7 @@ if(isset($_POST['checkoutBtn'])) {
 									<table>
 									<?php
 										echo '<tr>';
-										echo '<h3> --- screen --- </h3>';
+										echo '<h3> screen </h3>';
 										echo '</tr>';
 										
 										echo '<tr>';
@@ -312,6 +322,13 @@ if(isset($_POST['checkoutBtn'])) {
 												else {
 													echo '<input class="booked" type="checkbox" name="seating[]" value="booked" disabled>';
 												}
+
+												if ($x == '1' || $x == '3' ) {
+													echo '<input class="transparent_box" type="checkbox" disabled>';
+												}
+
+
+
 											}
 										echo	'<span>A</span><br>';
 										echo	'</tr>';
@@ -324,6 +341,10 @@ if(isset($_POST['checkoutBtn'])) {
 												}
 												else {
 													echo '<input class="booked" type="checkbox" name="seating[]" value="booked" disabled>';
+												}
+
+												if ($x == '7' || $x == '9' ) {
+													echo '<input class="transparent_box" type="checkbox" disabled>';
 												}
 											}
 										echo	'<span>B</span><br>';
@@ -338,6 +359,10 @@ if(isset($_POST['checkoutBtn'])) {
 												else {
 													echo '<input class="booked" type="checkbox" name="seating[]" value="booked" disabled>';
 												}
+
+												if ($x == '13' || $x == '15' ) {
+													echo '<input class="transparent_box" type="checkbox" disabled>';
+												}
 											}
 										echo	'<span>C</span><br>';
 										echo	'</tr>';
@@ -350,6 +375,10 @@ if(isset($_POST['checkoutBtn'])) {
 												}
 												else {
 													echo '<input class="booked" type="checkbox" name="seating[]" value="booked" disabled>';
+												}
+
+												if ($x == '19' || $x == '21' ) {
+													echo '<input class="transparent_box" type="checkbox" disabled>';
 												}
 											}
 										echo	'<span>D</span><br>';
