@@ -44,6 +44,6 @@ if (!$result){
 }
 else{
 	echo "Welcome ". $name . ". You are now registered<br>";
-	echo '<a href="homepage.php">go back home.</a>';
+	echo '<meta http-equiv="refresh" content="0;URL=login.php" />';
 }
 ?>

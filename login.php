@@ -17,19 +17,18 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 	//user tried to log in
 	$email = $_POST['email'];
 	$password = $_POST['password'];
+	$query = "SELECT * from customers where email='$email' and password = '$password'";
+
+	$result = $conn->query($query);
+	if ($result-> num_rows > 0 )
+	{
+		// if they are in the database register the user id
+		$_SESSION['valid_user'] = $email;
+	}
 }
 
-$query = "SELECT * from customers where email='$email' and password = '$password'";
 
-$result = $conn->query($query);
-if ($result-> num_rows > 0 )
-{
-	// if they are in the database register the user id
-	$_SESSION['valid_user'] = $email;
-}
 $conn->close();
-
-//problem end!!
 
 ?>
 
@@ -98,17 +97,17 @@ $conn->close();
 			
 			
 			<div id="content">
-				<div id="login_content_section">
-				<img id="content_logo_pict">			
-				
-				
+				<div id="login_content_section">				
+				<br><br><br>
 				<?php
 				
 				
 				if (isset($_SESSION['valid_user']))
 				{	
-					echo '<br>Welcome ' .$_SESSION['valid_user'].' <br/>';
-					echo '<a href="logout.php">Logout</a><br />';
+					echo '<table id="login_content_table"><tr><td>';
+					echo '<h3>Welcome ' .$_SESSION['valid_user']. '</h3><br>';
+					echo '<a href="logout.php">Logout</a><br><br>';
+					echo '</td></tr></table>';
 				}
 				else
 				{
@@ -124,14 +123,16 @@ $conn->close();
 				echo '	<table id="login_content_table">';
 				echo '	    <tr><td>';
 				echo '		<fieldset id="login_content_fieldset">';
-				echo '		<label>E-mail:';
-				echo ' 		<input type="email" name="email" size="30"></label> <br><br>';
-				echo '		<label>Password:';
-				echo '		<input type="password" name="password"></label>';
+				echo '		<table><tr>';
+				echo '      	<td>E-mail:</td>';
+				echo ' 			<td><input type="email" name="email" size="50"></td></tr>';
+				echo '		<tr>';
+				echo '			<td>Password:</td>';
+				echo '			<td><input type="password" name="password" size="30"></td></tr></table>';
 				echo '		</fieldset><br>';
 	
-				echo '		<input type="submit" value="Apply Now"><br>';
-				echo '		<p>click here to <a href="registration.php">sign up</a></p>';
+				echo '		<input style="float:left;width:150px;" class="btn_log" type="submit" value="login"><br><br>';
+				echo '		<p>No Account? <a href="registration.php">sign up</a></p><br><br>';
 					
 				echo '		</td></tr>';
 				echo '	</table>';

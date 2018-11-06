@@ -229,10 +229,17 @@ img#home_ads{
     background-color:white;
 }
 #login_content_table {
-    width: 60%;
+    color: black;
+	width: 60%;
     margin: 0 auto 0 auto;
 }
+#login_content_table a {
+    text-decoration: none;
+	color: blue;
+}
+
 #login_content_fieldset {
+	color: white;
     background-color: gray;
 	min-width: 600px;
 }

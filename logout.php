@@ -12,8 +12,7 @@
 <?php 
   if (!empty($old_user))
   {
-    echo 'Logged out.<br />';
-	echo '<a href="homepage.php">go back home.</a>';
+	echo '<meta http-equiv="refresh" content="0;URL=homepage.php" />';
   }
   else
   {

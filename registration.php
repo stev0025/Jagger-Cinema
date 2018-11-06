@@ -77,8 +77,8 @@ session_start();
 			
 			<div id="content">
 				<div id="login_content_section">
-				<img id="content_logo_pict">			
 				<form action="register.php" method="POST" id="reg_form">
+					<br>
 					<table style="color:white;" id="login_content_table">
 						<tr><td>
 						<fieldset id="login_content_fieldset"><legend>Login Info</legend>
