@@ -86,7 +86,7 @@ session_start();
 					    </tr>
 					    <tr>
 					        <td>Email:</td>
-					        <td>customerservice@jaggercinema.com</td>			        
+					        <td><a href="mailto:customerservice@jaggercinema.com">customerservice@jaggercinema.com</a></td>			        
 					    </tr>					    
 					    <tr>
 					        <td>Head Office Operating Hours:</td>
