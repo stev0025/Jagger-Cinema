@@ -80,36 +80,54 @@ session_start();
 				<img id="content_logo_pict">			
 				<form action="register.php" method="POST" id="reg_form">
 					<table style="color:white;" id="login_content_table">
-					    <tr><td>
-					<fieldset id="login_content_fieldset"><legend>Login Info</legend>
-					<label>E-mail:
-					<input type="email" name="email" id="email" size="30"></label> <br><br>
-					<label>Password:
-					<input type="password" name="password" id="password"></label> <br><br>
-					<label>Password confirmation:
-					<input type="password" name="password2" id="password2"></label>
-					</fieldset>
-					<br><br>
-					
-					<fieldset id="login_content_fieldset"><legend>Personal Info</legend>
-					<label>Name:
-					<input type="text" name="name" id="name" size="30"></label> <br><br>
-					<label>Salutation:
-					<select name="salutation">
-						<option value="Mr.">Mr.</option>
-						<option value="Mrs.">Mrs.</option>
-						<option value="Ms.">Ms.</option>
-						<option value="Mdm.">Mdm.</option>
-					</select>
-					</label> <br><br>
-					<label>Mobile Number:
-					<input type="text" name="phonenumber"></label>
-					</fieldset>
-					<br>
-					<input type="reset" value="Reset">
-					<input type="submit" value="Submit">
-					<br><br>
-					</td></tr>
+						<tr><td>
+						<fieldset id="login_content_fieldset"><legend>Login Info</legend>
+						<table>
+							<tr>
+								<td>E-mail:</td>
+								<td><input type="email" name="email" id="email" size="50"></td>
+							</tr>
+							<tr>
+								<td>Password:</td>
+								<td><input type="password" name="password" id="password" size="30"></td>
+							</tr>
+							<tr>
+								<td>Password confirmation:</td>
+								<td><input type="password" name="password2" id="password2" size="30"></td>
+							</tr>
+						</table>
+						</fieldset>
+						<br><br>
+						
+						<fieldset id="login_content_fieldset"><legend>Personal Info</legend>
+						<table>
+							<tr>
+								<td>Name:</td>
+								<td><input type="text" name="name" id="name" size="50"></td>
+							</tr>
+							<tr>
+								<td>Salutation:</td>
+								<td>
+									<select name="salutation">
+										<option value="Mr.">Mr.</option>
+										<option value="Mrs.">Mrs.</option>
+										<option value="Ms.">Ms.</option>
+										<option value="Mdm.">Mdm.</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Mobile Number:</td>
+								<td><input type="text" name="phonenumber"></td>
+							</tr>
+						
+
+						</td></tr>
+						</table>
+						</fieldset>
+						<br>
+						<input style="float:left; width: 150px;" class="btn_reg" type="submit" value="Register Now">
+						<br>
 					</table>
 					
 				</form>

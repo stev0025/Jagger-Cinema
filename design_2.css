@@ -234,7 +234,15 @@ img#home_ads{
 }
 #login_content_fieldset {
     background-color: gray;
+	min-width: 600px;
 }
+#login_content_fieldset table tr td:nth-child(1){
+	width: 150px;
+}
+#login_content_fieldset table tr td:nth-child(2){
+	max-width: 200px;
+}
+
 #moviepage_table_movie {
     margin: 0 auto;
     width: 100%;
