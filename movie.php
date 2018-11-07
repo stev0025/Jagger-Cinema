@@ -164,11 +164,11 @@ $movie_description_box8 = $row['description'];
 						<table id="moviepage_table_movie">
 							<tr>
 								<td>
-									<input type="image" src="<?php echo $movie_picture_box1;?>" border="10" alt="Submit" name="selectedMovie" value="Venom">
-									<!--
-									<img id="home_movie_pict" src="<?php echo $movie_picture_box1;?>">
-									<input type = "submit" name="selectedMovie" value="Venom">
-									-->
+								<button type="submit" name="selectedMovie" value="Venom">
+									<img src="<?php echo $movie_picture_box1;?>" alt="Submit">
+								</button>
+									
+								
 								</td>
 								
 								<td id="movie_description">
@@ -192,7 +192,10 @@ $movie_description_box8 = $row['description'];
 							</tr>
 							<tr>
 								<td>
-									<input type="image" src="<?php echo $movie_picture_box2;?>" border="10" alt="Submit" name="selectedMovie" value="First Man">	
+								<button type="submit" name="selectedMovie" value="First Man">
+									<img src="<?php echo $movie_picture_box2;?>" alt="Submit">
+								</button>
+								
 								</td>
 								
 								<td id="movie_description">
@@ -216,7 +219,10 @@ $movie_description_box8 = $row['description'];
 							</tr>
 							<tr>
 								<td>
-									<input type="image" src="<?php echo $movie_picture_box3;?>" border="10" alt="Submit" name="selectedMovie" value="Halloween">	
+								<button type="submit" name="selectedMovie" value="Halloween">
+									<img src="<?php echo $movie_picture_box3;?>" alt="Submit">
+								</button>
+							
 								</td>
 								
 								<td id="movie_description">
@@ -240,7 +246,9 @@ $movie_description_box8 = $row['description'];
 							</tr>
 							<tr>
 								<td>
-									<input type="image" src="<?php echo $movie_picture_box4;?>" border="10" alt="Submit" name="selectedMovie" value="Zombiepura">
+								<button type="submit" name="selectedMovie" value="Zombiepura">
+									<img src="<?php echo $movie_picture_box4;?>" alt="Submit">
+								</button>
 								</td>
 								
 								<td id="movie_description">
@@ -264,7 +272,10 @@ $movie_description_box8 = $row['description'];
 							</tr>
 							<tr>
 								<td>
-									<input type="image" src="<?php echo $movie_picture_box5;?>" border="10" alt="Submit" name="selectedMovie" value="Robin Hood: Origins">																		
+								<button type="submit" name="selectedMovie" value="Robin Hood: Origins">
+									<img src="<?php echo $movie_picture_box5;?>" alt="Submit">
+								</button>
+																									
 								</td>
 								
 								<td id="movie_description">
@@ -288,7 +299,10 @@ $movie_description_box8 = $row['description'];
 							</tr>
 							<tr>
 								<td>
-									<input type="image" src="<?php echo $movie_picture_box6;?>" border="10" alt="Submit" name="selectedMovie" value="Goosebumps 2: Haunted Halloween">														
+								<button type="submit" name="selectedMovie" value="Goosebumps 2: Haunted Halloween">
+									<img src="<?php echo $movie_picture_box6;?>" alt="Submit">
+								</button>
+																					
 								</td>
 								
 								<td id="movie_description">
@@ -312,7 +326,10 @@ $movie_description_box8 = $row['description'];
 							</tr>
 							<tr>
 								<td>
-									<input type="image" src="<?php echo $movie_picture_box7;?>" border="10" alt="Submit" name="selectedMovie" value="Wreck-It-Ralph">																		
+								<button type="submit" name="selectedMovie" value="Wreck-It-Ralph">
+									<img src="<?php echo $movie_picture_box7;?>" alt="Submit">
+								</button>
+																							
 								</td>
 								
 								<td id="movie_description">
@@ -336,7 +353,10 @@ $movie_description_box8 = $row['description'];
 							</tr>
 							<tr>
 								<td>
-									<input type="image" src="<?php echo $movie_picture_box8;?>" border="10" alt="Submit" name="selectedMovie" value="Widows">																		
+								<button type="submit" name="selectedMovie" value="Widows">
+									<img src="<?php echo $movie_picture_box8;?>" alt="Submit">
+								</button>
+																					
 								</td>
 								
 								<td id="movie_description">

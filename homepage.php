@@ -116,16 +116,24 @@ $movie_picture_box4 = $row['pict'];
 				    <table id="homepage_content_table_movie">
 				        <tr>
 				            <td>
-								<input type="image" src="<?php echo $movie_picture_box1;?>" border="10" alt="Submit" name="selectedMovie" value="Venom">
+								<button type="submit" name="selectedMovie" value="Venom">
+									<img src="<?php echo $movie_picture_box1;?>" alt="Submit">
+								</button>
 				            </td>
 				            <td>
-								<input type="image" src="<?php echo $movie_picture_box2;?>" border="10" alt="Submit" name="selectedMovie" value="First Man">	
+								<button type="submit" name="selectedMovie" value="First Man">
+									<img src="<?php echo $movie_picture_box2;?>" alt="Submit">
+								</button>
 				            </td>
 				            <td>
-								<input type="image" src="<?php echo $movie_picture_box3;?>" border="10" alt="Submit" name="selectedMovie" value="Halloween">	
+								<button type="submit" name="selectedMovie" value="Halloween">
+									<img src="<?php echo $movie_picture_box3;?>" alt="Submit">
+								</button>
 				            </td>
 				            <td>
-								<input type="image" src="<?php echo $movie_picture_box4;?>" border="10" alt="Submit" name="selectedMovie" value="Zombiepura">
+								<button type="submit" name="selectedMovie" value="Zombiepura">
+									<img src="<?php echo $movie_picture_box4;?>" alt="Submit">
+								</button>
 				            </td>
 				        </tr>
 				        <tr>

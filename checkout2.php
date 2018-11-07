@@ -79,7 +79,9 @@ if(isset($_POST['checkoutBtn'])) {
 		$email = $_POST['emailBox'];
 		$name = $_POST['nameBox'];
 		$payment = $_POST['payment'];
-		
+		$_SESSION['email'] = $email;###
+		$_SESSION['name'] = $name;###
+		$_SESSION['payment'] = $payment;###
 		include 'send_email.php'; #send email to user
 		#echo $email;
 		#echo $name;
@@ -91,10 +93,10 @@ if(isset($_POST['checkoutBtn'])) {
 				#$queryOrders = "INSERT INTO orders (title, email, seat, dayofweek, timing) VALUES ('$movie', '$email', $selected, $date, $timing)";
 				$queryOrders = "INSERT INTO orders (title, email, seat, dayofweek, timing, nameCustomer, payment) VALUES ('".$movie."', '".$email."', '".$selected."', '".$date."', '".$timing."', '".$name."', '".$payment."')";
 				#echo $movie." ".$email." ".$selected." ".$date." ".$timing;
-				$result = $conn->query($queryOrders);
-				echo "<script>alert('Tickets successfully purchased! Please check your email. Thank you! - Management Team');</script>";
+				$result = $conn->query($queryOrders);				
 
 			}
+			echo "<script>alert('Tickets successfully purchased! Please check your email. Thank you! - Management Team');</script>";
 			###Actual update of database
 			
 		}
