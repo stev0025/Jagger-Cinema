@@ -2,6 +2,8 @@ function validateForm() {
 
 	var j_name = document.getElementById("name");
 	var j_email = document.getElementById("email");
+	var j_pass1 = document.getElementById("password");
+	var j_pass2 = document.getElementById("password2");
 	
 	//email start here
 	
@@ -37,6 +39,11 @@ function validateForm() {
 		alert("The name field must contains alphabet characters and spaces only.");
 		//j_name.focus();
 		j_name.focus();
+		return false;
+	}
+	
+	if (j_pass1 != j_pass2) {
+		alert("password and confirmation password are not the same.");
 		return false;
 	}
 	
